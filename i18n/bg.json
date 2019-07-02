@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"DCLXVI",
+			"Termininja",
+			"Spiritia",
+			"Borislav",
+			"StanProg",
+			"Vodnokon4e",
+			"V111P",
+			"ShockD"
+		]
+	},
+	"thanks-thank": "{{GENDER:$1|{{GENDER:$2|благодарност}}}}",
+	"thanks-thanked": "{{GENDER:$1|{{GENDER:$2|изказана благодарност}}}}",
+	"thanks-button-thank": "{{GENDER:$1|{{GENDER:$2|Благодарност}}}}",
+	"thanks-button-thanked": "{{GENDER:$1|{{GENDER:$2|Изказана благодарност}}}}",
+	"thanks-thank-tooltip": "С препратката „благодарност“ можете да {{GENDER:$1|изкажете}} на {{GENDER:$2|този потребител|тази потребителка|този потребител}} благодарност за редакцията.",
+	"thanks-confirmation2": "{{GENDER:$1|Ще изпратите ли}} благодарност публично?",
+	"thanks-thanked-notice": "{{GENDER:$3|Вие}} благодарихте на {{GENDER:$2|$1}}.",
+	"thanks": "Изпращане на благодарност",
+	"thanks-submit": "Изпратете благодарност",
+	"echo-pref-subscription-edit-thank": "Благодари за моята редакция",
+	"echo-pref-tooltip-edit-thank": "Известяване, когато някой изкаже благодарност за моя редакция.",
+	"echo-category-title-edit-thank": "Благодарност",
+	"notification-thanks-diff-link": "вашата редакция",
+	"long-header-edit-thanks": "[$1 $2] {{GENDER:$4|Ви}} {{GENDER:$2|благодари}} за вашата редакция на [$5 $6].",
+	"long-header-log-thanks": "[$1 $2] {{GENDER:$4|Ви}} {{GENDER:$2|благодари}} за действието свързано с [$5 $6].",
+	"log-name-thanks": "Дневник на благодарностите",
+	"log-description-thanks": "По-долу е показан списък с потребители, получили благодарност от други потребители.",
+	"logentry-thanks-thank": "$1 {{GENDER:$2|изпрати благодарност на}} {{GENDER:$4|$3}}",
+	"logeventslist-thanks-log": "Дневник на благодарностите",
+	"thanks-confirmation-special-rev": "Искате ли да благодарите публично за тази редакция?",
+	"notification-link-text-view-post": "Виж коментар",
+}

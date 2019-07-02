@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amir a57",
+			"Koroğlu",
+			"Mousa",
+			"Ilğım",
+			"Alp Er Tunqa"
+		]
+	},
+	"thanks-thank": "{{GENDER:$1|{{GENDER:$2|تشکور}}}}",
+	"thanks-thanked": "{{GENDER:$1|{{GENDER:$2|تشکّور گؤندریلدی}}}}",
+	"thanks-thank-tooltip": "بۇ {{GENDER:$2|ایشلدنه}} بیر تشکّور مساژی {{GENDER:$1|گؤندر}}",
+	"thanks-confirmation2": "بۇ دییشیک‌لیک اۆچون آچیقجا تشکّور {{GENDER:$1|گؤندریلسینمی؟}}",
+	"thanks": "تشکّور ائت",
+	"thanks-submit": "تشکّور ائت",
+	"echo-category-title-edit-thank": "تشکرلر",
+	"long-header-edit-thanks": "[$1 $2] '''$3''' صفحه‌سینده ائتدیگینیز دییشیک‌لیک اۆچون {{GENDER:$4|سیزدن}} {{GENDER:$2|تشکّور ائتدی}}.",
+	"log-name-thanks": "تشکورلر ژورنالی",
+	"log-description-thanks": "بو، ایشلدنلرین بیر-بیریلریندن تشکور ائتمه لیستیدیر.",
+	"logentry-thanks-thank": "$1، {{GENDER:$4|$3}}-دن {{GENDER:$2|تشکور ائتدی}}",
+}

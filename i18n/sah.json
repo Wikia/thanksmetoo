@@ -1,0 +1,43 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kaganer",
+			"HalanTul",
+			"София",
+			"Туллук"
+		]
+	},
+	"thanks-desc": "Кыттааччыларга суруйууларын, ырытыыларын иһин махталы биллэрэр сигэни эбэр.",
+	"thanks-thank": "{{GENDER:$1|{{GENDER:$2|махтал}}}}",
+	"thanks-thanked": "{{GENDER:$1|{{GENDER:$2|махтаныллыбыт}}}}",
+	"thanks-button-thank": "{{GENDER:$1|{{GENDER:$2|Махтал}}}}",
+	"thanks-button-thanked": "{{GENDER:$1|{{GENDER:$2|Махтаныллыбыт}}}}",
+	"thanks-error-undefined": "Махтанар табыллыбата (алҕас куода: $1). Хатылаан көр.",
+	"thanks-error-invalidrevision": "Нүөмэрэ алҕастаах.",
+	"thanks-error-ratelimited": "{{GENDER:$1|Эн}} маннык дьайыыны кылгас кэм иһигэр наһаа элбэхтэ оҥорбуккун. Бука диэн тохтуу түһэн баран хатылаан көрөөр.",
+	"thanks-thank-tooltip": "Бу {{GENDER:$2|кыттааччыга}} махтал сурук {{GENDER:$1|ыытарга}}",
+	"thanks-thank-tooltip-no": "Махтанар сиртэн {{GENDER:$1|таҕыс}}",
+	"thanks-thank-tooltip-yes": "Махтал сурукта {{$1|ыыт}}",
+	"thanks-confirmation2": "Махталы дьон көрөрүгэр {{GENDER:$1|ыытаҕын}} дуо?",
+	"thanks-thanked-notice": "$1 кыттааччы {{GENDER:$2|бэйэтин}} суруйуутун иһин эйигиттэн махталы тутта.",
+	"thanks": "Махтанарга",
+	"thanks-submit": "Махтаныы",
+	"echo-pref-subscription-edit-thank": "Бэйэбэр махтал",
+	"echo-pref-tooltip-edit-thank": "Ким эмит суруйуубар махтаннаҕына миэхэ биллэрэр буолаар.",
+	"echo-category-title-edit-thank": "Махтал",
+	"notification-thanks-diff-link": "көннөрүүҥ иһин",
+	"long-header-edit-thanks": "[$1 $2] {{GENDER:$4|эйиэхэ}} '''$3''' сирэйи көннөрбүтүҥ иһин {{GENDER:$2|махтаммыт}}.",
+	"short-header-edit-thanks": "[$1 $2] $3 {{GENDER:$4|кыттааччыга}} {{GENDER:$2|махтаммыт}}",
+	"short-header-creation-thanks": "[$1 $2] $3 {{GENDER:$4|кыттааччыга}} {{GENDER:$2|махтаммыт}}",
+	"short-header-log-thanks": "[$1 $2] $3 {{GENDER:$4|кыттааччыга}} {{GENDER:$2|махтаммыт}}",
+	"log-name-thanks": "Махтаныы сурунаала",
+	"log-description-thanks": "Манна атын кыттааччылартан махтал туппут кыттааччылар тиһиликтэрэ көстөр.",
+	"logentry-thanks-thank": "$1 $3 {{GENDER:$4|кыттааччыга}} {{GENDER:$2|махтаммыт}}",
+	"thanks-error-no-id-specified": "Махтанарга торум нүөмэрин ыйар куолу.",
+	"notification-link-text-view-post": "Ырытыыны көрүү",
+	"thanks-error-invalidpostid": "Нүөмэрэ алҕастаах.",
+	"apihelp-thank-description": "Эрэдээктэргэ махтаныы туһунан биллэр.",
+	"apihelp-thank-param-rev": "Ааптарыгар махтанаары гынар торумуҥ ID-та.",
+	"apihelp-thank-param-source": "Ыйытык төрүтүн ойуулуур кылгас устуруока, холобур < KBD > Diff < / KBD > эбэтэр < KBD > История < / KBD > .",
+	"apihelp-thank-example-1": "Торум иһин махтанарга торумнар ыккардыларыгар баар уратыны көрдөрөр сирэйгэ <kbd>ID 456</kbd> сигэнии."
+}

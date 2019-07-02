@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="MediaWiki">
+    <rule ref="./vendor/hydrawiki/hydrawiki-codesniffer/HydraWiki">
+        <exclude name="MediaWiki.Usage.ForbiddenFunctions.extract" />
+        <!-- FIXME: These are disabled because the current code shell contains many @todo notes -->
+        <exclude name="Generic.Commenting.Todo.TaskFound" />
+        <exclude name="Generic.Commenting.Fixme.TaskFound" />
+    </rule>
+    <file>.</file>
+    <arg name="encoding" value="utf8"/>
+    <arg name="extensions" value="php"/>
+</ruleset>

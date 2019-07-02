@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Noor2020",
+			"عثمان خان شاہ",
+			"عرفان ارشد",
+			"Obaid Raza",
+			"Muhammad Shuaib",
+			"BukhariSaeed"
+		]
+	},
+	"thanks-thank": "{{GENDER:$1|{{GENDER:$2|شکریہ}}}}",
+	"thanks-thanked": "{{GENDER:$1|{{GENDER:$2|شکریہ ادا کیا جاچکا}}}}",
+	"thanks-button-thank": "{{GENDER:$1|{{GENDER:$2|شکریہ}}}}",
+	"thanks-button-thanked": "{{GENDER:$1|{{GENDER:$2|شکریہ ادا کیا جا چکا ہے}}}}",
+	"thanks-error-undefined": "شکریہ ادا نہیں کیا جاسکا (خاص: $1)۔ براہ مہربانی دوبارہ کوشش کریں۔",
+	"thanks-error-invalidrevision": "نسخے کا پتہ درست نہیں ہے",
+	"thanks-error-revdeleted": "نظر ثانی حذف ہو چکی ہے۔",
+	"thanks-error-ratelimited": "{{GENDER:$1|آپ}} ضرورت سے زیادہ کوشش کرچکے ہیں۔ براہ مہربانی کچھ دیر انتظار کے بعد دوبارہ کوشش کریں۔",
+	"thanks-thank-tooltip": "$1 نے $2 کا شکریہ ادا کیا",
+	"thanks-thank-tooltip-no": "شکریہ کی ادائیگی {{GENDER:$1|منسوخ}} کریں",
+	"thanks-thank-tooltip-yes": "شکریے کا پیغام {{GENDER:$1|ارسال}} کریں",
+	"thanks-confirmation2": "اِس ترمیم کے لیے عوامی طور پر شکریہ {{GENDER:$1|ادا کرنا چاہتے ہیں}}؟",
+	"thanks-thanked-notice": "$1 کو {{GENDER:$2|ان کو|ان کو|انہیں}} ترمیم پر {{GENDER:$3|آپ}} کا شکریہ موصول ہوچکا ہے۔",
+	"thanks": "اظہار تشکر",
+	"thanks-submit": "شکریہ ارسال کریں",
+	"echo-pref-subscription-edit-thank": "میری ترمیم کے لیے شکریہ ادا کریں",
+	"echo-pref-tooltip-edit-thank": "جب کوئی میری کسی ترمیم پر میرا شکریہ ادا کرے تو مجھے آگاہ کریں۔",
+	"echo-category-title-edit-thank": "شکریہ",
+	"notification-thanks-diff-link": "آپ کی ترمیم",
+	"long-header-edit-thanks": "[$1 $2] نے [$5 $6] پر {{GENDER:$4|آپ}} کی ترمیم پر {{GENDER:$2|شکریہ!}} ادا کیا۔",
+	"long-header-log-thanks": "[$1 $2] نے {{GENDER:$4|آپ}} کو <strong>$2</strong> سے متعلق عمل کے لیے {{GENDER:$2|شکریہ}} ادا کیا۔",
+	"thanks-confirmation-special-rev": "اِس ترمیم کے لیے عوامی طور پر شکریہ ادا کرنا چاہتے ہیں؟",
+}
