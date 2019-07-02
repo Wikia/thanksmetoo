@@ -175,79 +175,6 @@ class ThanksHooks {
 	}
 
 	/**
-	 * Add Thanks events to Echo
-	 *
-	 * @param  array &$notifications          array of Echo notifications
-	 * @param  array &$notificationCategories array of Echo notification categories
-	 * @param  array &$icons                  array of icon details
-	 * @return bool
-	 */
-	public static function onBeforeCreateEchoEvent(
-		&$notifications, &$notificationCategories, &$icons
-	) {
-		$notificationCategories['edit-thank'] = [
-			'priority' => 3,
-			'tooltip' => 'echo-pref-tooltip-edit-thank',
-		];
-
-		$notifications['edit-thank'] = [
-			'category' => 'edit-thank',
-			'group' => 'positive',
-			'section' => 'message',
-			'presentation-model' => 'EchoCoreThanksPresentationModel',
-			'bundle' => [
-				'web' => true,
-				'expandable' => true,
-			],
-		];
-
-		if (class_exists(Flow\FlowPresentationModel::class)) {
-			$notifications['flow-thank'] = [
-				'category' => 'edit-thank',
-				'group' => 'positive',
-				'section' => 'message',
-				'presentation-model' => 'EchoFlowThanksPresentationModel',
-				'bundle' => [
-					'web' => true,
-					'expandable' => true,
-				],
-			];
-		}
-
-		$icons['thanks'] = [
-			'path' => [
-				'ltr' => 'Thanks/resources/icons/userTalk-constructive-ltr.svg',
-				'rtl' => 'Thanks/resources/icons/userTalk-constructive-rtl.svg'
-			]
-		];
-
-		return true;
-	}
-
-	/**
-	 * Add user to be notified on echo event
-	 *
-	 * @param  EchoEvent $event  The event.
-	 * @param  User[]    &$users The user list to add to.
-	 * @return bool
-	 */
-	public static function onEchoGetDefaultNotifiedUsers($event, &$users) {
-		switch ($event->getType()) {
-			case 'edit-thank':
-			case 'flow-thank':
-				$extra = $event->getExtra();
-				if (!$extra || !isset($extra['thanked-user-id'])) {
-					break;
-				}
-				$recipientId = $extra['thanked-user-id'];
-				$recipient = User::newFromId($recipientId);
-				$users[$recipientId] = $recipient;
-				break;
-		}
-		return true;
-	}
-
-	/**
 	 * Handler for LocalUserCreated hook
 	 *
 	 * @see    http://www.mediawiki.org/wiki/Manual:Hooks/LocalUserCreated
@@ -320,65 +247,9 @@ class ThanksHooks {
 	 */
 	public static function onBeforePageDisplay(OutputPage $out, $skin) {
 		$title = $out->getTitle();
-		// Add to Flow boards.
-		if ($title instanceof Title && $title->hasContentModel('flow-board')) {
-			$out->addModules('ext.thanks.flowthank');
-		}
 		// Add to Special:Log.
 		if ($title->isSpecial('Log')) {
 			static::addThanksModule($out);
-		}
-		return true;
-	}
-
-	/**
-	 * Conditionally load API module 'flowthank' depending on whether or not
-	 * Flow is installed.
-	 *
-	 * @param  ApiModuleManager $moduleManager Module manager instance
-	 * @return bool
-	 */
-	public static function onApiMainModuleManager(ApiModuleManager $moduleManager) {
-		if (class_exists('FlowHooks')) {
-			$moduleManager->addModule(
-				'flowthank',
-				'action',
-				'ApiFlowThank'
-			);
-		}
-		return true;
-	}
-
-	/**
-	 * Handler for EchoGetBundleRule hook, which defines the bundle rules for each notification.
-	 *
-	 * @param  EchoEvent $event         The event being notified.
-	 * @param  string    &$bundleString Determines how the notification should be bundled.
-	 * @return bool True for success
-	 */
-	public static function onEchoGetBundleRules($event, &$bundleString) {
-		switch ($event->getType()) {
-			case 'edit-thank':
-				$bundleString = 'edit-thank';
-				// Try to get either the revid or logid parameter.
-				$revOrLogId = $event->getExtraParam('logid');
-				if ($revOrLogId) {
-					// avoid collision with revision ids
-					$revOrLogId = 'log' . $revOrLogId;
-				} else {
-					$revOrLogId = $event->getExtraParam('revid');
-				}
-				if ($revOrLogId) {
-					$bundleString .= $revOrLogId;
-				}
-				break;
-			case 'flow-thank':
-				$bundleString = 'flow-thank';
-				$postId = $event->getExtraParam('post-id');
-				if ($postId) {
-					$bundleString .= $postId;
-				}
-				break;
 		}
 		return true;
 	}

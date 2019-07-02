@@ -46,7 +46,6 @@ class ApiCoreThank extends ApiThank {
 		}
 		if ($type === 'rev') {
 			$revision = $this->getRevisionFromId($id);
-			$excerpt = EchoDiscussionParser::getEditExcerpt($revision, $this->getLanguage());
 			$title = $this->getTitleFromRevision($revision);
 			$recipient = $this->getUserFromRevision($revision);
 			$recipientUsername = $revision->getUserText();
@@ -66,7 +65,7 @@ class ApiCoreThank extends ApiThank {
 				$user,
 				$type,
 				$id,
-				$excerpt,
+				'',
 				$recipient,
 				$this->getSourceFromParams($params),
 				$title,
@@ -207,7 +206,7 @@ class ApiCoreThank extends ApiThank {
 				'message' => [
 					[
 						'user_note',
-						$excerpt
+						''
 					],
 					[
 						1,

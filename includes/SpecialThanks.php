@@ -9,15 +9,14 @@ class SpecialThanks extends FormSpecialPage {
 	protected $result;
 
 	/**
-	 * 'rev' for revision, 'log' for log entry, or 'flow' for Flow comment,
-	 * null if no ID is specified
+	 * 'rev' for revision, 'log' for log entry, null if no ID is specified
 	 *
 	 * @var string $type
 	 */
 	protected $type;
 
 	/**
-	 * Revision or Log ID ('0' = invalid) or Flow UUID
+	 * Revision or Log ID ('0' = invalid)
 	 *
 	 * @var string $id
 	 */
@@ -43,14 +42,7 @@ class SpecialThanks extends FormSpecialPage {
 		}
 
 		$tokens = explode('/', $par);
-		if ($tokens[0] === 'Flow') {
-			if (count($tokens) === 1 || $tokens[1] === '') {
-				$this->type = null;
-			} else {
-				$this->type = 'flow';
-				$this->id = $tokens[1];
-			}
-		} elseif (strtolower($tokens[0]) === 'log') {
+		if (strtolower($tokens[0]) === 'log') {
 			$this->type = 'log';
 			// Make sure there's a numeric ID specified as the subpage.
 			if (count($tokens) === 1 || $tokens[1] === '' || !(ctype_digit($tokens[1]))) {
@@ -102,8 +94,6 @@ class SpecialThanks extends FormSpecialPage {
 			$msgKey = 'thanks-error-invalidrevision';
 		} elseif ($this->type === 'log' && $this->id === '0') {
 			$msgKey = 'thanks-error-invalid-log-id';
-		} elseif ($this->type === 'flow') {
-			$msgKey = 'flow-thanks-confirmation-special';
 		} else {
 			$msgKey = 'thanks-confirmation-special-' . $this->type;
 		}
@@ -143,20 +133,12 @@ class SpecialThanks extends FormSpecialPage {
 			return Status::newFatal('thanks-error-invalidrevision');
 		}
 
-		if (in_array($this->type, ['rev', 'log'])) {
-			$requestData = [
-				'action' => 'thank',
-				$this->type => (int)$data['id'],
-				'source' => 'specialpage',
-				'token' => $this->getUser()->getEditToken(),
-			];
-		} else {
-			$requestData = [
-				'action' => 'flowthank',
-				'postid' => $data['revid'],
-				'token' => $this->getUser()->getEditToken(),
-			];
-		}
+		$requestData = [
+			'action' => 'thank',
+			$this->type => (int)$data['id'],
+			'source' => 'specialpage',
+			'token' => $this->getUser()->getEditToken(),
+		];
 
 		$request = new DerivativeRequest(
 			$this->getRequest(),
@@ -187,11 +169,8 @@ class SpecialThanks extends FormSpecialPage {
 		$recipient = User::newFromName($this->result['recipient']);
 		$link = Linker::userLink($recipient->getId(), $recipient->getName());
 
-		if (in_array($this->type, ['rev', 'log'])) {
-			$msgKey = 'thanks-thanked-notice';
-		} else {
-			$msgKey = 'flow-thanks-thanked-notice';
-		}
+		$msgKey = 'thanks-thanked-notice';
+
 		$msg = $this->msg($msgKey)
 			->rawParams($link)
 			->params($recipient->getName(), $sender->getName());

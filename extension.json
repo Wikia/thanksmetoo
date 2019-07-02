@@ -130,24 +130,6 @@
 			"scripts": [
 				"jquery.findWithParent.js"
 			]
-		},
-		"ext.thanks.flowthank": {
-			"scripts": [
-				"ext.thanks.flowthank.js"
-			],
-			"messages": [
-				"thanks-button-thanked",
-				"thanks-error-undefined",
-				"thanks-error-ratelimited"
-			],
-			"dependencies": [
-				"oojs-ui-core",
-				"oojs-ui-windows",
-				"mediawiki.jqueryMsg",
-				"mediawiki.api",
-				"ext.thanks.jquery.findWithParent",
-				"ext.thanks"
-			]
 		}
 	},
 	"ResourceFileModulePaths": {
