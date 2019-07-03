@@ -29,7 +29,7 @@
 	"echo-pref-tooltip-edit-thank": "\nМинең эшләнгән үҙгәртеүҙәрем өсөн ҡотларға теләгәндәргә, миңә хәбәр итәргә.",
 	"echo-category-title-edit-thank": "Рәхмәт!",
 	"notification-thanks-diff-link": "Һеҙҙең үҙгәртеүҙәрҙе",
-	"long-header-edit-thanks": "[$1 $2] {{GENDER:$4|һеҙгә}} [$5 $6] битендә яһаған үҙгәртеүегеҙ өсөн {{GENDER:$2|рәхмәт әйтте}}.",
+	"long-header-user-interest-edit-thanks": "[$1 $2] {{GENDER:$4|һеҙгә}} [$5 $6] битендә яһаған үҙгәртеүегеҙ өсөн {{GENDER:$2|рәхмәт әйтте}}.",
 	"log-name-thanks": "Ҡотлауҙар журналы",
 	"log-description-thanks": "Икенсе ҡатнашыусыларҙан ҡотлау алғандарҙан, аҫта ҡатнашыусылар исемлеге бар",
 	"logentry-thanks-thank": "$3 {{GENDER:$4|ҡатнашыусыны}}  $1 {{GENDER:$2|ҡотланы}}",

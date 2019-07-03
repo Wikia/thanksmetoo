@@ -19,6 +19,6 @@
 	"thanks-confirmation2": "{{GENDER:$1|Trugarekaat}} evit ar c'hemm-mañ ?",
 	"echo-category-title-edit-thank": "Trugarez",
 	"notification-thanks-diff-link": "ho kemm",
-	"long-header-edit-thanks": "[$1 $2] {{GENDER:$2|en deus|he deus}} trugarekaet deoc'h evit ho kemmadenn war [$5 $6].",
+	"long-header-user-interest-edit-thanks": "[$1 $2] {{GENDER:$2|en deus|he deus}} trugarekaet deoc'h evit ho kemmadenn war [$5 $6].",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|en deus|he deus}} trugarekaet {{GENDER:$4|$3}}"
 }

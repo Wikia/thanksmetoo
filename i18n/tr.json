@@ -34,7 +34,7 @@
 	"echo-pref-tooltip-edit-thank": "Yaptığım katkılar için yapılan teşekkürleri bana bildir.",
 	"echo-category-title-edit-thank": "Teşekkürler",
 	"notification-thanks-diff-link": "değişikliğiniz",
-	"long-header-edit-thanks": "[$1 $2], '''$3''' sayfasındaki değişikliğiniz için {{GENDER:$4|size}} {{GENDER:$2|teşekkür etti}}.",
+	"long-header-user-interest-edit-thanks": "[$1 $2], '''$3''' sayfasındaki değişikliğiniz için {{GENDER:$4|size}} {{GENDER:$2|teşekkür etti}}.",
 	"long-header-creation-thanks": "[$1 $2], [$5 $6] sayfasını oluşturduğunuz için {{GENDER:$4|size}} {{GENDER:$2|teşekkür etti}}.",
 	"long-header-log-thanks": "[$1 $2], [$5 $6] ile ilgili eyleminiz için {{GENDER:$4|size}} {{GENDER:$2|teşekkür etti}}.",
 	"log-name-thanks": "Teşekkür günlüğü",

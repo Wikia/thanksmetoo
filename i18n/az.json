@@ -20,6 +20,6 @@
 	"thanks-thanked-notice": "$1 etdiyi dəyişikliyə görə sizin təşəkkürünüzü aldı.",
 	"thanks": "Təşəkkür et",
 	"notification-thanks-diff-link": "redaktəniz",
-	"long-header-edit-thanks": "[$1 $2] '''$3''' səhifəsindəki redaktənizə görə {{GENDER:$4|sizə}} {{GENDER:$2|təşəkkür etdi}}.",
+	"long-header-user-interest-edit-thanks": "[$1 $2] '''$3''' səhifəsindəki redaktənizə görə {{GENDER:$4|sizə}} {{GENDER:$2|təşəkkür etdi}}.",
 	"logentry-thanks-thank": "$1 {{GENDER:$2}}, {{GENDER:$4|$3}} istifadəçisinə təşəkkür etdi."
 }

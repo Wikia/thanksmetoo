@@ -24,7 +24,7 @@
 	"echo-pref-tooltip-edit-thank": "Известяване, когато някой изкаже благодарност за моя редакция.",
 	"echo-category-title-edit-thank": "Благодарност",
 	"notification-thanks-diff-link": "вашата редакция",
-	"long-header-edit-thanks": "[$1 $2] {{GENDER:$4|Ви}} {{GENDER:$2|благодари}} за вашата редакция на [$5 $6].",
+	"long-header-user-interest-edit-thanks": "[$1 $2] {{GENDER:$4|Ви}} {{GENDER:$2|благодари}} за вашата редакция на [$5 $6].",
 	"long-header-log-thanks": "[$1 $2] {{GENDER:$4|Ви}} {{GENDER:$2|благодари}} за действието свързано с [$5 $6].",
 	"log-name-thanks": "Дневник на благодарностите",
 	"log-description-thanks": "По-долу е показан списък с потребители, получили благодарност от други потребители.",

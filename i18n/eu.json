@@ -22,7 +22,7 @@
 	"echo-pref-tooltip-edit-thank": "Abisatu norbaitek egin dudan aldaketa bat eskertzen duenean.",
 	"echo-category-title-edit-thank": "Eskerrak",
 	"notification-thanks-diff-link": "edizioa",
-	"long-header-edit-thanks": "[$1 $2] lankideak '''$3''' orrian egin {{GENDER:$4|duzun}} aldaketa {{GENDER:$2|eskertzen}} dizu.",
+	"long-header-user-interest-edit-thanks": "[$1 $2] lankideak '''$3''' orrian egin {{GENDER:$4|duzun}} aldaketa {{GENDER:$2|eskertzen}} dizu.",
 	"log-name-thanks": "Eskertza erregistroa",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|wikilariak}} eskerrak eman dizkio {{GENDER:$4|$3}} wikilariari",
 	"notification-link-text-view-post": "Erakutsi iruzkina",

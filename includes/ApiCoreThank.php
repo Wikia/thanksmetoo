@@ -6,6 +6,8 @@
  * @ingroup Extensions
  */
 
+use Reverb\Notification\NotificationBroadcast;
+
 class ApiCoreThank extends ApiThank {
 	/**
 	 * Perform the API request.
@@ -229,7 +231,7 @@ class ApiCoreThank extends ApiThank {
 						$title->getFullURL()
 					],
 					[
-						5,
+						6,
 						$title->getFullText()
 					]
 				]

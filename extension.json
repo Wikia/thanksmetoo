@@ -164,30 +164,49 @@
 		"ResourceLoaderTestModules": [
 			"ThanksHooks::onResourceLoaderTestModules"
 		],
-		"ApiMain::moduleManager": [
-			"ThanksHooks::onApiMainModuleManager"
-		],
 		"LogEventsListLineEnding": [
 			"ThanksHooks::onLogEventsListLineEnding"
 		]
 	},
 	"config": {
-		"ThanksSendToBots": false,
-		"ThanksLogging": true,
-		"ThanksConfirmationRequired": true,
-		"ThanksLogTypeWhitelist": [
-			"contentmodel",
-			"delete",
-			"import",
-			"merge",
-			"move",
-			"patrol",
-			"protect",
-			"tag",
-			"managetags",
-			"rights",
-			"lock"
-		]
+		"ThanksSendToBots": {
+			"value": false
+		},
+		"ThanksLogging": {
+			"value": true
+		},
+		"ThanksConfirmationRequired": {
+			"value": true
+		},
+		"ThanksLogTypeWhitelist": {
+			"value": [
+				"contentmodel",
+				"delete",
+				"import",
+				"merge",
+				"move",
+				"patrol",
+				"protect",
+				"tag",
+				"managetags",
+				"rights",
+				"lock"
+			]
+		},
+		"ReverbNotifications": {
+			"value": {
+				"user-interest-create-thanks": {
+					"importance": 0
+				},
+				"user-interest-edit-thanks": {
+					"importance": 0
+				},
+				"user-interest-log-thanks": {
+					"importance": 0
+				}
+			},
+			"merge_strategy": "array_plus_2d"
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }

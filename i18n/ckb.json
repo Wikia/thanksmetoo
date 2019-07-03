@@ -26,7 +26,7 @@
 	"echo-pref-tooltip-edit-thank": "کاتێک یەکێک بۆ دەستکارییەکی من کردوومە سپاسم دەکا، ئاگادارم بکە.",
 	"echo-category-title-edit-thank": "سپاس",
 	"notification-thanks-diff-link": "دەستکارییەکەت",
-	"long-header-edit-thanks": "[$1 $2] {{GENDER:$2|سپاسی}} {{GENDER:$4|کردی}} بۆ دەستکارییەکەت لە '''$3''' دا.",
+	"long-header-user-interest-edit-thanks": "[$1 $2] {{GENDER:$2|سپاسی}} {{GENDER:$4|کردی}} بۆ دەستکارییەکەت لە '''$3''' دا.",
 	"long-header-creation-thanks": "[$1 $2] لەبەر دروستکدنی [$5 $6] سوپاسی کردیت.",
 	"long-header-log-thanks": "[$1 $2] سپاسی کردیت بۆ کردارەکەت لەسەر [$5 $6].",
 	"log-name-thanks": "لۆگی سپاس",

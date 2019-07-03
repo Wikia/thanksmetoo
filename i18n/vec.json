@@ -17,7 +17,7 @@
 	"echo-pref-tooltip-edit-thank": "Avìseme co che qualcheduni me ringrassia par na modifica che gò fato.",
 	"echo-category-title-edit-thank": "Ringrassiamenti",
 	"notification-thanks-diff-link": "la to modifica",
-	"long-header-edit-thanks": "[$1 $2] {{GENDER:$4|el|la}} te gà {{GENDER:$2|ringrassià}} par la to modifica su [$5 $6].",
+	"long-header-user-interest-edit-thanks": "[$1 $2] {{GENDER:$4|el|la}} te gà {{GENDER:$2|ringrassià}} par la to modifica su [$5 $6].",
 	"log-name-thanks": "Registro dei ringrassiamenti",
 	"log-description-thanks": "Sta qua xe na lista dei utenti ringrassià da altri utenti.",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|el|la}} gà ringrassià {{GENDER:$4|$3}}",

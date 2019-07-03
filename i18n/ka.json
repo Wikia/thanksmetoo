@@ -23,7 +23,7 @@
 	"echo-pref-tooltip-edit-thank": "შემატყობინე, როდესაც ვინმე მადლობას გადამიხდის ჩემი რედაქტირებისათვის",
 	"echo-category-title-edit-thank": "მადლობა",
 	"notification-thanks-diff-link": "რედაქტირებისათვის",
-	"long-header-edit-thanks": "[$1 $2] {{GENDER:$2|მადლობა გადაგიხადათ}} {{GENDER:$4|თქვენი}} რედაქტირებისათვის გვერდზე '''$3'''.",
+	"long-header-user-interest-edit-thanks": "[$1 $2] {{GENDER:$2|მადლობა გადაგიხადათ}} {{GENDER:$4|თქვენი}} რედაქტირებისათვის გვერდზე '''$3'''.",
 	"log-name-thanks": "„მადლობის“ ჟურნალი",
 	"log-description-thanks": "ქვემოთ მოცემულია მომხმარებელთა სია, რომელთაც სხვა მომხმარებლებმა გადაუხადეს მადლობა",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|მადლობა გადაუხადა}} {{GENDER:$4|$3}}",
