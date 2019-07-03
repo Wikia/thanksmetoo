@@ -195,14 +195,17 @@
 		},
 		"ReverbNotifications": {
 			"value": {
-				"user-interest-create-thanks": {
-					"importance": 0
+				"user-interest-thanks-creation": {
+					"importance": 0,
+					"use-preference": "user-interest-thanks"
 				},
-				"user-interest-edit-thanks": {
-					"importance": 0
+				"user-interest-thanks-edit": {
+					"importance": 0,
+					"use-preference": "user-interest-thanks"
 				},
-				"user-interest-log-thanks": {
-					"importance": 0
+				"user-interest-thanks-log": {
+					"importance": 0,
+					"use-preference": "user-interest-thanks"
 				}
 			},
 			"merge_strategy": "array_plus_2d"

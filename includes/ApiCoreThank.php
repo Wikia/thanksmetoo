@@ -200,7 +200,7 @@ class ApiCoreThank extends ApiThank {
 		$agentUserTitle = Title::makeTitle(NS_USER_PROFILE, $agent->getName());
 		$recipientUserTitle = Title::makeTitle(NS_USER_PROFILE, $recipient->getName());
 		$broadcast = NotificationBroadcast::newSingle(
-			'user-interest-' . ($revcreation ? 'create' : 'edit') . '-thanks',
+			'user-interest-thanks-' . ($revcreation ? 'create' : 'edit'),
 			$agent,
 			$recipient,
 			[

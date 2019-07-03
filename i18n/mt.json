@@ -19,7 +19,7 @@
 	"thanks-thanked-notice": "$1 {{GENDER:$2|ġie mgħarraf|ġiet mgħarrfa|ġew mgħarrfin}} li għoġbitek il-modifika {{GENDER:$2|tiegħu|tagħha|tagħhom}}.",
 	"echo-pref-subscription-edit-thank": "Jirringrazzjani għall-modifika li għamilt",
 	"echo-pref-tooltip-edit-thank": "Agħrrafni meta xi ħadd jirringrazzjani għal xi modifika li nkun għamilt.",
-	"echo-category-title-edit-thank": "Ringrazzjamenti",
+	"special-sidebar-user-interest-thanks": "Ringrazzjamenti",
 	"notification-thanks-diff-link": "il-modifika tiegħek",
 	"log-name-thanks": "Reġistru ta' ringrazzjamenti",
 	"log-description-thanks": "Taħt hawn lista ta' utenti irringrazzjati minn utenti oħra.",

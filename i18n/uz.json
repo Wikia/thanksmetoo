@@ -17,7 +17,7 @@
 	"thanks-thanked-notice": "$1ga {{GENDER:$2|uning|uning|ularning}} tahririni yoqtirganingiz haqida bildirildi.",
 	"echo-pref-subscription-edit-thank": "Tahririm uchun menga rahmat aytildi",
 	"echo-pref-tooltip-edit-thank": "Tahririm uchun rahmat aytilsa menga bildir.",
-	"echo-category-title-edit-thank": "Rahmat",
+	"special-sidebar-user-interest-thanks": "Rahmat",
 	"notification-thanks-diff-link": "tahriringiz",
 	"log-name-thanks": "Rahmatlar qaydi",
 	"log-description-thanks": "Quyida rahmat aytilgan foydalanuvchilar roʻyxati keltirilgan.",

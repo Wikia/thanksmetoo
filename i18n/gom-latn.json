@@ -11,7 +11,7 @@
 	"thanks-thank-tooltip": "Hea {{GENDER:$2|Vangdiak}} dinvas diupi kollovnni {{GENDER:$1|dhad}}",
 	"thanks": "Dinvasnim dhad",
 	"thanks-submit": "Dinvasnim dhad",
-	"echo-category-title-edit-thank": "Dev borem korum",
+	"special-sidebar-user-interest-thanks": "Dev borem korum",
 	"notification-thanks-diff-link": "Tujem bodlop",
 	"logentry-thanks-thank": "$1-an {{GENDER:$4|$3}}-ak {{GENDER:$2|dinvaslem}}"
 }

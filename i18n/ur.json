@@ -26,9 +26,9 @@
 	"thanks-submit": "شکریہ ارسال کریں",
 	"echo-pref-subscription-edit-thank": "میری ترمیم کے لیے شکریہ ادا کریں",
 	"echo-pref-tooltip-edit-thank": "جب کوئی میری کسی ترمیم پر میرا شکریہ ادا کرے تو مجھے آگاہ کریں۔",
-	"echo-category-title-edit-thank": "شکریہ",
+	"special-sidebar-user-interest-thanks": "شکریہ",
 	"notification-thanks-diff-link": "آپ کی ترمیم",
-	"long-header-user-interest-edit-thanks": "[$1 $2] نے [$5 $6] پر {{GENDER:$4|آپ}} کی ترمیم پر {{GENDER:$2|شکریہ!}} ادا کیا۔",
+	"long-header-user-interest-thanks-edit": "[$1 $2] نے [$5 $6] پر {{GENDER:$4|آپ}} کی ترمیم پر {{GENDER:$2|شکریہ!}} ادا کیا۔",
 	"long-header-log-thanks": "[$1 $2] نے {{GENDER:$4|آپ}} کو <strong>$2</strong> سے متعلق عمل کے لیے {{GENDER:$2|شکریہ}} ادا کیا۔",
 	"thanks-confirmation-special-rev": "اِس ترمیم کے لیے عوامی طور پر شکریہ ادا کرنا چاہتے ہیں؟",
 }

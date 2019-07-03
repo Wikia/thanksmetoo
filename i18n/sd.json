@@ -13,6 +13,6 @@
 	"thanks-thank-tooltip": "هن {{GENDER:$2|واپرائيندڙ}} ڏانهن '''توهان جي مهرباني''' جو اطلاع {{GENDER:$1|موڪليو}}",
 	"thanks-confirmation2": "مھربانيون عوامي طور {{GENDER:$1|موڪليو}}؟",
 	"thanks-submit": "مھربانيون موڪليو",
-	"long-header-user-interest-edit-thanks": "[$1 $2] {{GENDER:$4|توھان کي}} [$5 $6]\nتي توھان جي سنوار لاءِ {{GENDER:$2|مھرباني چئي}}.",
+	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$4|توھان کي}} [$5 $6]\nتي توھان جي سنوار لاءِ {{GENDER:$2|مھرباني چئي}}.",
 	"notification-compact-header-edit-thank": "$1 {{GENDER:$3|توھان کي}} {{GENDER:$2|مھرباني چئي}}."
 }

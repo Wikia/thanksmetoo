@@ -16,7 +16,7 @@
 	"thanks-thanked-notice": "$1 къошулуучугъа {{GENDER:$2|аны|аны|аланы}} тюрлендириуюн джаратханыгъыз билдирилди.",
 	"echo-pref-subscription-edit-thank": "Тюрлендириуюм ючюн меннге ыспас",
 	"echo-pref-tooltip-edit-thank": "Ким болса да, этген тюрлендириуюм ючюн сау бол десе, меннге билдир.",
-	"echo-category-title-edit-thank": "Сау бол",
+	"special-sidebar-user-interest-thanks": "Сау бол",
 	"notification-thanks-diff-link": "тюрлендириуюгюз",
 	"log-name-thanks": "Сау бол айтыу журнал",
 	"log-description-thanks": "Тюбюрекде, башха къошулуучуладан ыспас алгъан къошулуучуланы тизмесиди.",

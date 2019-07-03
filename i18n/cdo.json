@@ -18,7 +18,7 @@
 	"thanks-thanked-notice": "$1收遘{{GENDER:$3|汝}}对{{GENDER:$2|伊其|伊其|伊各儂其}}編輯其感謝。",
 	"echo-pref-subscription-edit-thank": "感謝我其修改",
 	"echo-pref-tooltip-edit-thank": "有儂因為我其編輯感謝我辰候通知我。",
-	"echo-category-title-edit-thank": "謝謝",
+	"special-sidebar-user-interest-thanks": "謝謝",
 	"notification-thanks-diff-link": "汝其編輯",
 	"log-name-thanks": "感謝日誌",
 	"log-description-thanks": "下底是乞其他用戶感謝過其用戶其蜀萆單單。",
