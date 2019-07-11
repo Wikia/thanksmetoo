@@ -195,6 +195,9 @@
 		},
 		"ReverbNotifications": {
 			"value": {
+				"user-interest-thanks": {
+					"importance": 0
+				},
 				"user-interest-thanks-creation": {
 					"importance": 0,
 					"use-preference": "user-interest-thanks"
