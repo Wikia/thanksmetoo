@@ -12,6 +12,7 @@
 	"thanks": "Dinvasnim dhad",
 	"thanks-submit": "Dinvasnim dhad",
 	"special-sidebar-user-interest-thanks": "Dev borem korum",
+	"reverb-pref-title-user-interest-thanks": "Dev borem korum",
 	"notification-thanks-diff-link": "Tujem bodlop",
 	"logentry-thanks-thank": "$1-an {{GENDER:$4|$3}}-ak {{GENDER:$2|dinvaslem}}"
 }

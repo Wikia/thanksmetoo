@@ -30,6 +30,7 @@
 	"echo-pref-subscription-edit-thank": "എന്റെ തിരുത്തിന് എനിക്ക് കൃതജ്ഞത രേഖപ്പെടുത്തുക",
 	"echo-pref-tooltip-edit-thank": "ഞാൻ ചെയ്ത തിരുത്തിന് ആരെങ്കിലും നന്ദി രേഖപ്പെടുത്തിയാൽ എന്നെ അറിയിക്കുക.",
 	"special-sidebar-user-interest-thanks": "നന്ദി",
+	"reverb-pref-title-user-interest-thanks": "നന്ദി",
 	"notification-thanks-diff-link": "താങ്കൾ ചെയ്ത തിരുത്തിന്",
 	"long-header-user-interest-thanks-edit": "'''$3''' താളിൽ താങ്കൾ ചെയ്ത തിരുത്തിന്  [$1 $2] {{GENDER:$4|താങ്കൾക്ക്}} {{GENDER:$2|നന്ദി രേഖപ്പെടുത്തി}}.",
 	"short-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$3|താങ്കൾക്ക്}} {{GENDER:$2|നന്ദി രേഖപ്പെടുത്തി}}",

@@ -21,6 +21,7 @@
 	"echo-pref-subscription-edit-thank": "Баркалла суна ас нисдар дарна",
 	"echo-pref-tooltip-edit-thank": "Хаийта соьга, цхьам баркалла аьлча.",
 	"special-sidebar-user-interest-thanks": "Баркалла",
+	"reverb-pref-title-user-interest-thanks": "Баркалла",
 	"notification-thanks-diff-link": "нисдар",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|хьуна}} {{GENDER:$4|баркалла аьлла}} $3 хӀара агӀо таярна.",
 	"log-name-thanks": "Баркаллийн тептар",

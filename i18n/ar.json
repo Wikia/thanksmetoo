@@ -46,6 +46,7 @@
 	"echo-pref-subscription-edit-thank": "شكري على تعديلي",
 	"echo-pref-tooltip-edit-thank": "أخطرني عندما يشكرني أحدهم على تعديل قمت به.",
 	"special-sidebar-user-interest-thanks": "شكر",
+	"reverb-pref-title-user-interest-thanks": "شكر",
 	"notification-thanks-diff-link": "تعديلك",
 	"long-header-user-interest-thanks-edit": "[$1 $2] شكر{{GENDER:$2||ت}}ك على {{GENDER:$4|تعديلك}} في [$5 $6].",
 	"long-header-creation-thanks": "[$1 $2] {{GENDER:$2|شكر|شكرت}}{{GENDER:$4|ك}} على إنشائك لـ[$5 $6].",

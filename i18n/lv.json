@@ -33,6 +33,7 @@
 	"echo-pref-subscription-edit-thank": "Pateicība par manu labojumu",
 	"echo-pref-tooltip-edit-thank": "Paziņot man, kad kāds man izsaka pateicību par labojumu.",
 	"special-sidebar-user-interest-thanks": "Paldies",
+	"reverb-pref-title-user-interest-thanks": "Paldies",
 	"notification-thanks-diff-link": "tavu labojumu",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|pateicās}} {{GENDER:$4|tev}} par tavu labojumu rakstā [$5 $6].",
 	"long-header-creation-thanks": "[$1 $2] {{GENDER:$2|pateicās}} {{GENDER:$4|tev}} par [$5 $6] izveidi.",

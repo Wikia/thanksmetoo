@@ -25,6 +25,7 @@
 	"echo-pref-subscription-edit-thank": "Бэйэбэр махтал",
 	"echo-pref-tooltip-edit-thank": "Ким эмит суруйуубар махтаннаҕына миэхэ биллэрэр буолаар.",
 	"special-sidebar-user-interest-thanks": "Махтал",
+	"reverb-pref-title-user-interest-thanks": "Махтал",
 	"notification-thanks-diff-link": "көннөрүүҥ иһин",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$4|эйиэхэ}} '''$3''' сирэйи көннөрбүтүҥ иһин {{GENDER:$2|махтаммыт}}.",
 	"short-header-user-interest-thanks-edit": "[$1 $2] $3 {{GENDER:$4|кыттааччыга}} {{GENDER:$2|махтаммыт}}",

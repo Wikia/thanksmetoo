@@ -22,6 +22,7 @@
 	"echo-pref-subscription-edit-thank": "મેં કરેલા ફેરફાર માટે મારો આભાર માને છે",
 	"echo-pref-tooltip-edit-thank": "મેં કરેલા ફેરફાર માટે કોઈ મારો આભાર માને ત્યારે મને જણાવો.",
 	"special-sidebar-user-interest-thanks": "આભાર",
+	"reverb-pref-title-user-interest-thanks": "આભાર",
 	"notification-thanks-diff-link": "તમે કરેલો ફેરફાર",
 	"long-header-user-interest-thanks-edit": "તમે [$5 $6] પર કરેલા ફેરફાર માટે [$1 $2]એ {{GENDER:$4|તમારો}} {{GENDER:$2|આભાર}} માન્યો છે.",
 	"log-name-thanks": "આભાર નોંધ",

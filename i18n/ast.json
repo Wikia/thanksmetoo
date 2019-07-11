@@ -33,6 +33,7 @@
 	"echo-pref-subscription-edit-thank": "Agradecimientos pola mio edición",
 	"echo-pref-tooltip-edit-thank": "Avisame cuando alguién me de les gracies por una edición de mio.",
 	"special-sidebar-user-interest-thanks": "Gracies",
+	"reverb-pref-title-user-interest-thanks": "Gracies",
 	"notification-thanks-diff-link": "la so edición",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$4|dióte}} les {{GENDER:$2|gracies}} pola to edición sobro [$5 $6].",
 	"long-header-creation-thanks": "[$1 $2] {{GENDER:$4|dióte}} les {{GENDER:$2|gracies}} pola creación de [$5 $6].",

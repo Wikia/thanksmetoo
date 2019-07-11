@@ -23,6 +23,7 @@
 	"echo-pref-subscription-edit-thank": "Менің өңдемем үшін маған рахмет айту",
 	"echo-pref-tooltip-edit-thank": "Мен жасаған өңдеме үшін әлдебіреу рахмет айтқанда маған білдір.",
 	"special-sidebar-user-interest-thanks": "Рахмет",
+	"reverb-pref-title-user-interest-thanks": "Рахмет",
 	"notification-thanks-diff-link": "өңдемеңізге",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$4|сізге}} [$5 $6] бетіндегі өңдемеңізге {{GENDER:$2|рахметін}} білдірді.",
 	"short-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$3|сізге}} {{GENDER:$2|рахметін}} білдірді.",

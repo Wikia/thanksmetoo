@@ -43,6 +43,7 @@
 	"echo-pref-subscription-edit-thank": "Dankeschöns für meine Bearbeitung",
 	"echo-pref-tooltip-edit-thank": "Benachrichtige mich, wenn mir jemand für eine Bearbeitung dankt, die ich gemacht habe.",
 	"special-sidebar-user-interest-thanks": "Dankeschön",
+	"reverb-pref-title-user-interest-thanks": "Dankeschön",
 	"notification-thanks-diff-link": "deine Bearbeitung",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|dankte}} {{GENDER:$4|dir}} für deine Bearbeitung auf [$5 $6].",
 	"long-header-creation-thanks": "[$1 $2] {{GENDER:$2|dankte}} {{GENDER:$4|dir}} für deine Erstellung von [$5 $6].",

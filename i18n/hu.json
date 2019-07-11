@@ -43,6 +43,7 @@
 	"echo-pref-subscription-edit-thank": "Megköszöni a szerkesztésem",
 	"echo-pref-tooltip-edit-thank": "Értesítést kérek, ha valaki megköszöni egy szerkesztésemet.",
 	"special-sidebar-user-interest-thanks": "köszönet",
+	"reverb-pref-title-user-interest-thanks": "köszönet",
 	"notification-thanks-diff-link": "a szerkesztésed",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2 $4|megköszönte}} a szerkesztésedet a(z) [$5 $6] lapon.",
 	"long-header-creation-thanks": "[$1 $2] {{GENDER:$2 $4|megköszönte}} a(z) [$5 $6] lap létrehozását.",

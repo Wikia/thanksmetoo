@@ -22,6 +22,7 @@
 	"echo-pref-subscription-edit-thank": "Fy niolch am fy ngolygiad",
 	"echo-pref-tooltip-edit-thank": "Hysbyser fi pan fo rhywun yn fy niolch am un o'm golygiadau.",
 	"special-sidebar-user-interest-thanks": "Diolch",
+	"reverb-pref-title-user-interest-thanks": "Diolch",
 	"notification-thanks-diff-link": "eich golygiad",
 	"long-header-user-interest-thanks-edit": "[$1 $2] Rhododd {{GENDER:$2|air o ddiolch}} i {{GENDER:$4|chi}} am eich golygiad ar '''$3'''.",
 	"log-name-thanks": "Lòg diolchiadau",

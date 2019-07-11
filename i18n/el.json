@@ -25,6 +25,7 @@
 	"echo-pref-subscription-edit-thank": "Με ευχαριστεί για την επεξεργασία μου",
 	"echo-pref-tooltip-edit-thank": "Να ειδοποιούμαι όταν κάποιος με ευχαριστεί για μια επεξεργασία που έκανα.",
 	"special-sidebar-user-interest-thanks": "Ευχαριστίες",
+	"reverb-pref-title-user-interest-thanks": "Ευχαριστίες",
 	"notification-thanks-diff-link": "την επεξεργασία σου",
 	"long-header-user-interest-thanks-edit": "{{GENDER:$2|Ο|Η}} [$1 $2] {{GENDER:$4|σας}} ευχαρίστησε για την επεξεργασία σας στην [$5 $6].",
 	"short-header-user-interest-thanks-edit": "{{GENDER:$2|Ο|Η}} [$1 $2] {{GENDER:$3|σας}} ευχαρίστησε.",

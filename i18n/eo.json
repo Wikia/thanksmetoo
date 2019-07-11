@@ -24,6 +24,7 @@
 	"echo-pref-subscription-edit-thank": "Danki al mi pro miaj redaktoj",
 	"echo-pref-tooltip-edit-thank": "Sciigu min kiam iu dankas al mi pro mia redakto.",
 	"special-sidebar-user-interest-thanks": "Dankoj",
+	"reverb-pref-title-user-interest-thanks": "Dankoj",
 	"notification-thanks-diff-link": "via redakto",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|dankis}} {{GENDER:$4|vin}} pro via redakto en [$5 $6].",
 	"log-name-thanks": "Protokolo de dankoj",

@@ -38,6 +38,7 @@
 	"echo-pref-subscription-edit-thank": "আমার সম্পাদনার জন্য আমার ধন্যবাদসমূহ",
 	"echo-pref-tooltip-edit-thank": "আমার কোনো সম্পাদনার জন্য কেউ আমাকে ধন্যবাদ দিলে তা আমাকে জানান।",
 	"special-sidebar-user-interest-thanks": "ধন্যবাদসমূহ",
+	"reverb-pref-title-user-interest-thanks": "ধন্যবাদসমূহ",
 	"notification-thanks-diff-link": "আপনার সম্পাদনা",
 	"long-header-user-interest-thanks-edit": "[$1 $2] [$5 $6]-এ আপনার সম্পাদনার জন্য {{GENDER:$4|আপনাকে}} {{GENDER:$2|ধন্যবাদ জানিয়েছেন}}।",
 	"long-header-log-thanks": "[$5 $6] সম্পর্কিত কর্মের জন্য [$1 $2] {{GENDER:$4|আপনাকে}} {{GENDER:$2|ধন্যবাদ জানিয়েছেন}}।",

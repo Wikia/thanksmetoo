@@ -10,5 +10,6 @@
 	"thanks-button-thank": "Ташаккур",
 	"thanks-button-thanked": "{{GENDER:$1|{{GENDER:$2|Ра‏ҳматро қабул кард‏}}}}",
 	"special-sidebar-user-interest-thanks": "Миннатдорам",
+	"reverb-pref-title-user-interest-thanks": "Миннатдорам",
 	"logentry-thanks-thank": "Корбар $1 ба корбар $4 миннатдориашро баён кард"
 }

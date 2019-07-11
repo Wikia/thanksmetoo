@@ -40,6 +40,7 @@
 	"echo-pref-subscription-edit-thank": "Cảm ơn tôi vì một sửa đổi của tôi",
 	"echo-pref-tooltip-edit-thank": "Báo cho tôi biết khi nào người ta cảm ơn tôi vì một sửa đổi của tôi.",
 	"special-sidebar-user-interest-thanks": "Cảm ơn",
+	"reverb-pref-title-user-interest-thanks": "Cảm ơn",
 	"notification-thanks-diff-link": "sửa đổi của bạn",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2}}đã cảm ơn {{GENDER:$4}}bạn vì sửa đổi tại [$5 $6].",
 	"long-header-log-thanks": "[$1 $2] {{GENDER:$2}}đã cảm ơn {{GENDER:$4}}bạn vì tác vụ có liên quan đến [$5 $6].",

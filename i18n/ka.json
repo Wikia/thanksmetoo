@@ -22,6 +22,7 @@
 	"echo-pref-subscription-edit-thank": "მადლობა ჩემი რედაქტირებისათვის",
 	"echo-pref-tooltip-edit-thank": "შემატყობინე, როდესაც ვინმე მადლობას გადამიხდის ჩემი რედაქტირებისათვის",
 	"special-sidebar-user-interest-thanks": "მადლობა",
+	"reverb-pref-title-user-interest-thanks": "მადლობა",
 	"notification-thanks-diff-link": "რედაქტირებისათვის",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|მადლობა გადაგიხადათ}} {{GENDER:$4|თქვენი}} რედაქტირებისათვის გვერდზე '''$3'''.",
 	"log-name-thanks": "„მადლობის“ ჟურნალი",

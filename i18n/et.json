@@ -34,6 +34,7 @@
 	"echo-pref-subscription-edit-thank": "Mind tänatakse minu muudatuse eest",
 	"echo-pref-tooltip-edit-thank": "Teavita mind, kui keegi tänab mind tehtud muudatuse eest.",
 	"special-sidebar-user-interest-thanks": "Tänamine",
+	"reverb-pref-title-user-interest-thanks": "Tänamine",
 	"notification-thanks-diff-link": "muudatuse",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|tänas}} {{GENDER:$4|sind}} muudatuse eest leheküljel \"[$5 $6]\".",
 	"long-header-log-thanks": "[$1 $2] {{GENDER:$2|tänas}} {{GENDER:$4|sind}} lehekülje \"[$5 $6]\" suhtes rakendatud toimingu eest.",

@@ -25,6 +25,7 @@
 	"echo-pref-subscription-edit-thank": "poďakuje mi niekto za moje úpravy",
 	"echo-pref-tooltip-edit-thank": "Upozornite ma, ak mi niekto poďakuje za moju úpravu.",
 	"special-sidebar-user-interest-thanks": "poďakovanie",
+	"reverb-pref-title-user-interest-thanks": "poďakovanie",
 	"notification-thanks-diff-link": "vašu úpravu",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$4|vám}} {{GENDER:$2|poďakoval|poďakovala}} za úpravu stránky '''$3'''.",
 	"long-header-log-thanks": "[$1 $2] {{GENDER:$4|vám}} {{GENDER:$2|poďakoval|poďakovala}} za vašu akciu súvisiacu so stránkou [$5 $6].",

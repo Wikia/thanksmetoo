@@ -23,6 +23,7 @@
 	"echo-pref-subscription-edit-thank": "Благодари за моята редакция",
 	"echo-pref-tooltip-edit-thank": "Известяване, когато някой изкаже благодарност за моя редакция.",
 	"special-sidebar-user-interest-thanks": "Благодарност",
+	"reverb-pref-title-user-interest-thanks": "Благодарност",
 	"notification-thanks-diff-link": "вашата редакция",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$4|Ви}} {{GENDER:$2|благодари}} за вашата редакция на [$5 $6].",
 	"long-header-log-thanks": "[$1 $2] {{GENDER:$4|Ви}} {{GENDER:$2|благодари}} за действието свързано с [$5 $6].",

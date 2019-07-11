@@ -36,6 +36,7 @@
 	"echo-pref-subscription-edit-thank": "Agraeix la meva edició",
 	"echo-pref-tooltip-edit-thank": "Notifica'm quan algú agraeix una edició que he fet.",
 	"special-sidebar-user-interest-thanks": "Agraïments",
+	"reverb-pref-title-user-interest-thanks": "Agraïments",
 	"notification-thanks-diff-link": "l'edició",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$4|us}} ha {{GENDER:$2|agraït}} la vostra edició a [$5 $6].",
 	"short-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$3|us}} {{GENDER:$2|ha agraït}}.",

@@ -22,6 +22,7 @@
 	"echo-pref-subscription-edit-thank": "Дзякуй мне за маю праўку",
 	"echo-pref-tooltip-edit-thank": "Паведамляць мне, калі хтосьці дзякуе мяне за зробленую мной праўку.",
 	"special-sidebar-user-interest-thanks": "Дзякуй",
+	"reverb-pref-title-user-interest-thanks": "Дзякуй",
 	"notification-thanks-diff-link": "вашу праўку",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|падзякаваў|падзякавала}} {{GENDER:$4|вам}} за вашу праўку на старонцы [$5 $6].",
 	"log-name-thanks": "Журнал падзяк",

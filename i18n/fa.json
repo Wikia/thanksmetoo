@@ -48,6 +48,7 @@
 	"echo-pref-subscription-edit-thank": "تشکر از من بابت ویرایشم",
 	"echo-pref-tooltip-edit-thank": "وقتی کسی از ویرایش‌های من تشکر می‌کند مرا آگاه کن.",
 	"special-sidebar-user-interest-thanks": "تشکرها",
+	"reverb-pref-title-user-interest-thanks": "تشکرها",
 	"notification-thanks-diff-link": "ویرایش‌تان",
 	"long-header-user-interest-thanks-edit": "[$1 $2] از {{GENDER:$4|شما}}به خاطر ویرایشتان در [$5 $6] {{GENDER:$2|تشکر کرد}}.",
 	"long-header-log-thanks": "\n[$1 $2] {{GENDER:$2|از شما}} برای عمل مرتبط با [$5 $6] {{GENDER:$4|تشکر کرد}}.",

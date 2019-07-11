@@ -18,6 +18,7 @@
 	"thanks-thank-tooltip-yes": "{{GENDER:$1|Kas}} ar c'hemenn trugarekaat",
 	"thanks-confirmation2": "{{GENDER:$1|Trugarekaat}} evit ar c'hemm-mañ ?",
 	"special-sidebar-user-interest-thanks": "Trugarez",
+	"reverb-pref-title-user-interest-thanks": "Trugarez",
 	"notification-thanks-diff-link": "ho kemm",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|en deus|he deus}} trugarekaet deoc'h evit ho kemmadenn war [$5 $6].",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|en deus|he deus}} trugarekaet {{GENDER:$4|$3}}"

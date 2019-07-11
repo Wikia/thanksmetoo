@@ -28,6 +28,7 @@
 	"echo-pref-subscription-edit-thank": "Matur nuwun marang aku awit besutanku",
 	"echo-pref-tooltip-edit-thank": "Pariwarani aku nalika ana sing matur nuwun awit besutan sing dakgawé.",
 	"special-sidebar-user-interest-thanks": "Matur nuwun",
+	"reverb-pref-title-user-interest-thanks": "Matur nuwun",
 	"notification-thanks-diff-link": "besutanmu",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|matur nuwun}} {{GENDER:$4|marang panjenengan}} awit besutané panjenengan ing [$5 $6].",
 	"short-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|matur nuwun}} {{GENDER:$3|marang panjenengan}}.",

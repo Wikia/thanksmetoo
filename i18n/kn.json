@@ -9,5 +9,6 @@
 	"thanks-error-undefined": "ಧನ್ಯವಾದ ಪ್ರಕ್ರಿಯ ನಡೆಯಲಿಲ್ಲ. ಪುನಃ ಪ್ರಯತ್ನಿಸಿ",
 	"thanks-thank-tooltip": "ಈ {{GENDER:$2|ಬಳಕೆದಾರನಿಗೆ}} ಧನ್ಯವಾದ ಸೂಚನೆಯನ್ನು {{GENDER:$1|ಕಳುಹಿಸಿ}}",
 	"special-sidebar-user-interest-thanks": "ಧನ್ಯವಾದಗಳು",
+	"reverb-pref-title-user-interest-thanks": "ಧನ್ಯವಾದಗಳು",
 	"notification-thanks-diff-link": "ನಿಮ್ಮ ಸಂಪಾದನೆ"
 }

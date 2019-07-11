@@ -46,6 +46,7 @@
 	"echo-pref-subscription-edit-thank": "Agradece-me pela minha edição",
 	"echo-pref-tooltip-edit-thank": "Notificar-me quando alguém me agradecer por uma edição que eu fiz.",
 	"special-sidebar-user-interest-thanks": "Agradecimentos",
+	"reverb-pref-title-user-interest-thanks": "Agradecimentos",
 	"notification-thanks-diff-link": "sua edição",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|agradeceu-lhe}} {{GENDER:$4|pela}} sua edição em [$5 $6].",
 	"long-header-creation-thanks": "[$1 $2] {{GENDER:$2|agradeceu}}{{GENDER:$4|-lhe}} a criação de [$5 $6].",
