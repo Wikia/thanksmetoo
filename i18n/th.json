@@ -33,6 +33,7 @@
 	"echo-pref-subscription-edit-thank": "กล่าวขอบคุณฉันสำหรับการแก้ไขของฉัน",
 	"echo-pref-tooltip-edit-thank": "แจ้งฉันเมื่อบางคนกล่าวขอบคุณฉันสำหรับการแก้ไขที่ฉันกระทำ",
 	"special-sidebar-user-interest-thanks": "ขอบคุณ",
+	"reverb-pref-title-user-interest-thanks": "ขอบคุณ",
 	"notification-thanks-diff-link": "การแก้ไขของคุณ",
 	"long-header-user-interest-thanks-edit": "[$1 $2] ได้{{GENDER:$2|กล่าวขอบคุณ}}{{GENDER:$4|คุณ}}สำหรับการแก้ไขของคุณบน [$5 $6]",
 	"long-header-log-thanks": "[$1 $2] ได้{{GENDER:$2|กล่าวขอบคุณ}}{{GENDER:$4|คุณ}}สำหรับการกระทำของคุณเกี่ยวกับ [$5 $6]",

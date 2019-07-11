@@ -48,6 +48,7 @@
 	"echo-pref-subscription-edit-thank": "对我的编辑的感谢",
 	"echo-pref-tooltip-edit-thank": "当有人感谢我的编辑时通知我。",
 	"special-sidebar-user-interest-thanks": "感谢",
+	"reverb-pref-title-user-interest-thanks": "感谢",
 	"notification-thanks-diff-link": "编辑",
 	"long-header-user-interest-thanks-edit": "[$1 $2]{{GENDER:$2|感谢了}}{{GENDER:$4|您}}在[$5 $6]的编辑。",
 	"long-header-creation-thanks": "[$1 $2]{{GENDER:$2|感谢了}}{{GENDER:$4|您}}在[$5 $6]的编辑。",

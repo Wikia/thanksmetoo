@@ -18,6 +18,7 @@
 	"echo-pref-subscription-edit-thank": "ការថ្លែងអំណរគុណចំពោះការកែប្រែរបស់ខ្ញុំ",
 	"echo-pref-tooltip-edit-thank": "ជូនដំណឹងដល់ខ្ញុំពេលនរណាម្នាក់ថ្លែងអំណរគុណចំពោះការកែប្រែរបស់ខ្ញុំ",
 	"special-sidebar-user-interest-thanks": "ការថ្លែងអំណរគុណ",
+	"reverb-pref-title-user-interest-thanks": "ការថ្លែងអំណរគុណ",
 	"notification-thanks-diff-link": "កំណែប្រែរបស់អ្នក",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|បានថ្លែងអំណរគុណ}}{{GENDER:$4|អ្នក}}សម្រាប់ការកែប្រែរបស់អ្នកនៅ[$5 $6]។",
 	"long-header-log-thanks": "[$1 $2] {{GENDER:$2|បានថ្លែងអំណរគុណ}}{{GENDER:$4|អ្នក}}សម្រាប់សកម្មភាពនានារបស់អ្នកនៅ[$5 $6]។",

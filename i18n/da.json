@@ -28,6 +28,7 @@
 	"echo-pref-subscription-edit-thank": "Takker mig for min redigering",
 	"echo-pref-tooltip-edit-thank": "Giv mig besked, når nogen takker mig for en redigering jeg har lavet.",
 	"special-sidebar-user-interest-thanks": "Tak!",
+	"reverb-pref-title-user-interest-thanks": "Tak!",
 	"notification-thanks-diff-link": "din redigering",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|takkede}} {{GENDER:$4|dig}} for din redigering på '''$3'''.",
 	"log-name-thanks": "Takkelog",

@@ -33,6 +33,7 @@
 	"echo-pref-subscription-edit-thank": "Katkım için bana teşekkür edildi",
 	"echo-pref-tooltip-edit-thank": "Yaptığım katkılar için yapılan teşekkürleri bana bildir.",
 	"special-sidebar-user-interest-thanks": "Teşekkürler",
+	"reverb-pref-title-user-interest-thanks": "Teşekkürler",
 	"notification-thanks-diff-link": "değişikliğiniz",
 	"long-header-user-interest-thanks-edit": "[$1 $2], '''$3''' sayfasındaki değişikliğiniz için {{GENDER:$4|size}} {{GENDER:$2|teşekkür etti}}.",
 	"long-header-creation-thanks": "[$1 $2], [$5 $6] sayfasını oluşturduğunuz için {{GENDER:$4|size}} {{GENDER:$2|teşekkür etti}}.",

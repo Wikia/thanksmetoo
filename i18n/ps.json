@@ -22,6 +22,7 @@
 	"echo-pref-subscription-edit-thank": "زه د سمون پخاطر زما منندوی شه",
 	"echo-pref-tooltip-edit-thank": "خبر مې کړه کله چې يو څوک زما د يو سمون په خاطر له ما څخه مننه کوي.",
 	"special-sidebar-user-interest-thanks": "مننه",
+	"reverb-pref-title-user-interest-thanks": "مننه",
 	"notification-thanks-diff-link": "ستاسې سمون",
 	"long-header-user-interest-thanks-edit": "په '''$3''' باندې د سمون پخاطر، [$1 $2] له {{GENDER:$4|تاسې}} څخه {{GENDER:$2|مننه وکړه}}.",
 	"log-name-thanks": "د مننې يادښت",

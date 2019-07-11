@@ -46,6 +46,7 @@
 	"echo-pref-subscription-edit-thank": "als iemand u bedankt voor een bewerking",
 	"echo-pref-tooltip-edit-thank": "Informeer mij wanneer iemand mij bedankt voor een bewerking van mij.",
 	"special-sidebar-user-interest-thanks": "Bedankjes",
+	"reverb-pref-title-user-interest-thanks": "Bedankjes",
 	"notification-thanks-diff-link": "uw bewerking",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|heeft}} {{GENDER:$4|u}} bedankt voor uw bewerking op [$5 $6].",
 	"long-header-creation-thanks": "[$1 $2] {{GENDER:$2|heeft}} {{GENDER:$4|u}} bedankt voor het aanmaken van [$5 $6].",

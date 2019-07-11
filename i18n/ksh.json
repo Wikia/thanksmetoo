@@ -23,6 +23,7 @@
 	"echo-pref-subscription-edit-thank": "Dank mer för ming Änderong",
 	"echo-pref-tooltip-edit-thank": "Lohß mesch weße, wann sesch einer för en Änderong bedangk, di esch jemaat han.",
 	"special-sidebar-user-interest-thanks": "Dank",
+	"reverb-pref-title-user-interest-thanks": "Dank",
 	"notification-thanks-diff-link": "Ding Änderong",
 	"long-header-user-interest-thanks-edit": "{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} \n[$1 $2] hät sesch bei Der bedangk för Ding Änderong aan dä Sigg '''$3'''.{{GENDER:$4|}}",
 	"log-name-thanks": "Et Logbohch vum Bedangke",

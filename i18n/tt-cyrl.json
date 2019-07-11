@@ -12,5 +12,6 @@
 	"thanks-confirmation2": "Әлеге төзәтмә өчен рәхмәт {{GENDER:$1|әйтергәме}}?",
 	"thanks": "Рәхмәт әйтү",
 	"special-sidebar-user-interest-thanks": "Рәхмәтләр",
+	"reverb-pref-title-user-interest-thanks": "Рәхмәтләр",
 	"notification-header-rev-thank": "$1 {{GENDER:$4|сезгә}} [$5 $6] битендә ясаган кертемегез өчен {{GENDER:$2|рәхмәт әйтте}}."
 }

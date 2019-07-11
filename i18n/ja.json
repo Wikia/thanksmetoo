@@ -38,6 +38,7 @@
 	"echo-pref-subscription-edit-thank": "自分の編集に誰かが感謝を示したとき",
 	"echo-pref-tooltip-edit-thank": "自分の編集に誰かが感謝を示したときに通知する。",
 	"special-sidebar-user-interest-thanks": "感謝",
+	"reverb-pref-title-user-interest-thanks": "感謝",
 	"notification-thanks-diff-link": "あなたの編集",
 	"long-header-user-interest-thanks-edit": "[$1 $2] が [$5 $6] での{{GENDER:$4|あなた}}の編集に{{GENDER:$2|感謝}}を示しました。",
 	"long-header-log-thanks": "[$1 $2]が[$5 $6]での{{GENDER:$4|あなた}}の編集に{{GENDER:$2|感謝}}を示しました。",

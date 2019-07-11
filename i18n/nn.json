@@ -26,6 +26,7 @@
 	"echo-pref-subscription-edit-thank": "Takkar meg for endringa mi",
 	"echo-pref-tooltip-edit-thank": "Meld meg når nokon takkar meg for ei endring eg har gjort.",
 	"special-sidebar-user-interest-thanks": "Takk",
+	"reverb-pref-title-user-interest-thanks": "Takk",
 	"notification-thanks-diff-link": "endringa di",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|takka}} {{GENDER:$4|deg}} for endringa di på [$5 $6].",
 	"long-header-log-thanks": "[$1 $2] {{GENDER:$2|takka}} {{GENDER:$4|deg}} for handlinga di knytt til [$5 $6].",

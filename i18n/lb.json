@@ -27,6 +27,7 @@
 	"echo-pref-subscription-edit-thank": "'Mercie' fir meng Ännerung",
 	"echo-pref-tooltip-edit-thank": "Mech Informéiere wann ee mir fir eng Ännerung déi ech gemaach hu Merci seet.",
 	"special-sidebar-user-interest-thanks": "Merci",
+	"reverb-pref-title-user-interest-thanks": "Merci",
 	"notification-thanks-diff-link": "Är Ännerung",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|huet}} {{GENDER:$4|Iech}} fir Är Ännerung op [$5 $6] Merci gesot.",
 	"short-header-user-interest-thanks-edit": "[$1 $2] huet {{GENDER:$3|Iech}} {{GENDER:$2|Merci gesot}}.",

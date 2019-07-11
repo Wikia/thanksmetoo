@@ -19,6 +19,7 @@
 	"echo-pref-subscription-edit-thank": "Me mercejar per ma modificacion",
 	"echo-pref-tooltip-edit-thank": "M'avisar quand qualqu’un me merceja per una modificacion qu’ai faita.",
 	"special-sidebar-user-interest-thanks": "Mercé",
+	"reverb-pref-title-user-interest-thanks": "Mercé",
 	"notification-thanks-diff-link": "vòstra modificacion",
 	"long-header-user-interest-thanks-edit": "[$1 $2] vos {{GENDER:$2|a}} {{GENDER:$4|mercejat|mercejada|remercejat(ejada)}} per vòstra modificacion sus [$5 $6].",
 	"log-name-thanks": "Entrada mercejaments",

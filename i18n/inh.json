@@ -13,6 +13,7 @@
 	"thanks-thank-tooltip": "{{GENDER:$1|ДIадахьийта}} {{GENDER:$2|укх доакъашхочунна}} баркал",
 	"thanks-confirmation2": "ХӀара баркал алар массанена гу йиш йолаш хул. {{GENDER:$1|ДӀадахьийта баркал}}?",
 	"special-sidebar-user-interest-thanks": "Баркал алар",
+	"reverb-pref-title-user-interest-thanks": "Баркал алар",
 	"log-name-thanks": "Баркал аларий тептар",
 	"logentry-thanks-thank": "доакъашхочо $1 {{GENDER:$2|баркал аьннад}} {{GENDER:$4|доакъашхочунна}} $3"
 }

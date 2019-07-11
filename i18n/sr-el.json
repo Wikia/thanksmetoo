@@ -25,6 +25,7 @@
 	"echo-pref-subscription-edit-thank": "Zahvaljivanje za izmene",
 	"echo-pref-tooltip-edit-thank": "Obaveštava vas kada vam se neko zahvali za izmenu koju ste napravili.",
 	"special-sidebar-user-interest-thanks": "Zahvalnice",
+	"reverb-pref-title-user-interest-thanks": "Zahvalnice",
 	"notification-thanks-diff-link": "vašoj izmeni",
 	"long-header-user-interest-thanks-edit": "[$1 $2] Vam se {{GENDER:$2|zahvalio|zahvalila}} na {{GENDER:$4|Vašoj}} izmeni stranice [$5 $6].",
 	"short-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$3|Vam se}} {{GENDER:$2|zahvalio|zahvalila|zahvalio}}.",

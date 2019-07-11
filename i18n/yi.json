@@ -22,6 +22,7 @@
 	"echo-pref-subscription-edit-thank": "דאנקט מיך פאר מיין רעדאקטירונג",
 	"echo-pref-tooltip-edit-thank": "זיי מיך מודיע ווען איינער דאנקט מיך פאר א רעדאקטירונג מיינע.",
 	"special-sidebar-user-interest-thanks": "אַ דאַנק",
+	"reverb-pref-title-user-interest-thanks": "אַ דאַנק",
 	"notification-thanks-diff-link": "אײַער רעדאקטירונג",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|האט}} {{GENDER:$4|אייך}} געדאַנקט פֿאר אייער רעדאקטירונג אויף [$5 $6].",
 	"short-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|האט געדאנקט}} {{GENDER:$3|אייך}}",

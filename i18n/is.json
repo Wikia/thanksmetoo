@@ -28,6 +28,7 @@
 	"echo-pref-subscription-edit-thank": "Þakkar mér fyrir breytingu mína",
 	"echo-pref-tooltip-edit-thank": "Láta mig vita þegar einhver þakkar mér fyrir breytingu sem ég gerði.",
 	"special-sidebar-user-interest-thanks": "Þakkir",
+	"reverb-pref-title-user-interest-thanks": "Þakkir",
 	"notification-thanks-diff-link": "þín breyting",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|þakkaði}} {{GENDER:$4|þér}} fyrir breytingu þína á '''$3'''.",
 	"short-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|þakkaði}} {{GENDER:$3|þér}}.",

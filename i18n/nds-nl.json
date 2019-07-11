@@ -20,6 +20,7 @@
 	"echo-pref-subscription-edit-thank": "Bedank m'n veur mien bewarking",
 	"echo-pref-tooltip-edit-thank": "Stuur m'n n melding as der ene mien bedankt veur n bewarking die'k an-ebröcht hebbe.",
 	"special-sidebar-user-interest-thanks": "Bedankt",
+	"reverb-pref-title-user-interest-thanks": "Bedankt",
 	"notification-thanks-diff-link": "joew bewarking",
 	"long-header-user-interest-thanks-edit": "[$1 $2] {{GENDER:$2|hef}} {{GENDER:$4|joe}} bedankt veur joew bewarking op '''$3'''.",
 	"log-name-thanks": "Bedankjeslogboek",
