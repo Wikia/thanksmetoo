@@ -37,5 +37,5 @@
 	"log-name-thanks": "Þakkaskrá",
 	"log-description-thanks": "Fyrir neðan er lista yfir notendur sem aðrir notendur hafa þakkað.",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|þakkaði}} {{GENDER:$4|$3}}",
-	"notification-link-text-view-post": "Birta athugasemd",
+	"notification-link-text-view-post": "Birta athugasemd"
 }

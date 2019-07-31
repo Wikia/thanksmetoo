@@ -36,5 +36,5 @@
 	"log-name-thanks": "Takkelogg",
 	"log-description-thanks": "Under er ei liste over brukarar som har vorte takka av andre brukarar.",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|takka}} {{GENDER:$4|$3}}",
-	"logeventslist-thanks-log": "Takkelogg",
+	"logeventslist-thanks-log": "Takkelogg"
 }

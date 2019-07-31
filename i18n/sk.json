@@ -37,5 +37,5 @@
 	"logentry-thanks-thank": "$1 {{GENDER:$2|poďakoval|poďakovala}} {{GENDER:$4|redaktorovi|redaktorke}} $3",
 	"thanks-error-no-id-specified": "Aby ste {{GENDER:|mohol|mohla|mohli}} poďakovať, musíte zadať ID úpravy.",
 	"notification-link-text-view-post": "Zobraziť komentár",
-	"thanks-error-invalidpostid": "ID komentára nie je platné.",
+	"thanks-error-invalidpostid": "ID komentára nie je platné."
 }

@@ -41,5 +41,5 @@
 	"logentry-thanks-thank": "$1 {{GENDER:$2|zahvalio|zahvalila}} se {{GENDER:$4|korisniku|korisnici}} {{GENDER:$4|$3}}",
 	"thanks-error-no-id-specified": "Morate navesti ID izmjene za koju se želite zahvaliti.",
 	"notification-link-text-view-post": "Pogledaj komentar",
-	"thanks-error-invalidpostid": "ID objave nije ispravan.",
+	"thanks-error-invalidpostid": "ID objave nije ispravan."
 }

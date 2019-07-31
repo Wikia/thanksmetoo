@@ -26,5 +26,5 @@
 	"logentry-thanks-thank": "$1 {{GENDER:$2|het}} {{GENDER:$4|$3}} bedank",
 	"thanks-error-no-id-specified": "U moet 'n WysigingID verskaf om iemand te bedank.",
 	"notification-link-text-view-post": "Wys opmerking",
-	"thanks-error-invalidpostid": "PosID is ongeldig",
+	"thanks-error-invalidpostid": "PosID is ongeldig"
 }

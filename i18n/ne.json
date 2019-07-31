@@ -31,5 +31,5 @@
 	"logentry-thanks-thank": "$1ले {{GENDER:$4|$3}}लाई {{GENDER:$2|धन्यवाद दिएको छ}}",
 	"thanks-error-no-id-specified": "धन्यवाद गर्नको लागि तपाईंलाई कुनै एक पुनरीक्षण ठेगाना निर्दिष्ट गर्नु पर्ने हो।",
 	"notification-link-text-view-post": "टिप्पणी हेर्ने",
-	"thanks-error-invalidpostid": "पोस्ट ठेगाना अमान्य छ।",
+	"thanks-error-invalidpostid": "पोस्ट ठेगाना अमान्य छ।"
 }
