@@ -66,7 +66,7 @@ class ApiCoreThank extends ApiThank {
 			$this->sendThanks(
 				$user,
 				$type,
-				$id,
+				(int) $id,
 				'',
 				$recipient,
 				$this->getSourceFromParams($params),
@@ -187,7 +187,7 @@ class ApiCoreThank extends ApiThank {
 	 * @return void
 	 */
 	protected function sendThanks(
-		User $agent, $type, $id, $excerpt, User $recipient, $source, Title $title, $revcreation
+		User $agent, string $type, int $id, string $excerpt, User $recipient, $source, Title $title, bool $revcreation
 	) {
 		$uniqueId = $type . '-' . $id;
 		// Do one last check to make sure we haven't sent Thanks before
@@ -197,14 +197,25 @@ class ApiCoreThank extends ApiThank {
 			return;
 		}
 
+		if ($type === 'log') {
+			$canonicalUrl = SpecialPage::getTitleFor('Log')->getFullURL(['logid' => $id]);
+		} else {
+			$canonicalUrl = $title->getFullURL(
+				[
+					'oldid' => 'prev',
+					'diff' => $id
+				]
+			);
+		}
+
 		$agentUserTitle = Title::makeTitle(NS_USER, $agent->getName());
 		$recipientUserTitle = Title::makeTitle(NS_USER, $recipient->getName());
 		$broadcast = NotificationBroadcast::newSingle(
-			'user-interest-thanks-' . ($revcreation ? 'creation' : 'edit'),
+			'user-interest-thanks-' . ($type === 'log' ? 'log' : ($revcreation ? 'creation' : 'edit')),
 			$agent,
 			$recipient,
 			[
-				'url' => $title->getFullUrl(),
+				'url' => $canonicalUrl,
 				'message' => [
 					[
 						'user_note',
@@ -233,6 +244,10 @@ class ApiCoreThank extends ApiThank {
 					[
 						6,
 						$title->getFullText()
+					],
+					[
+						7,
+						$canonicalUrl
 					]
 				]
 			]
