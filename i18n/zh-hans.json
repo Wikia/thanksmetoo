@@ -57,6 +57,7 @@
 	"short-header-user-interest-thanks-creation": "[$1 $2]{{GENDER:$2|感谢了}}{{GENDER:$3|您}}。",
 	"short-header-user-interest-thanks-log": "[$1 $2]{{GENDER:$2|感谢了}}{{GENDER:$3|您}}。",
 	"log-name-thanks": "感谢日志",
+	"log-show-hide-thanks": "$1感谢日志",
 	"log-description-thanks": "下面是得到其他用户感谢的用户的列表。",
 	"logentry-thanks-thank": "$1{{GENDER:$2|感谢了}}{{GENDER:$4|$3}}",
 	"logeventslist-thanks-log": "感谢日志",
