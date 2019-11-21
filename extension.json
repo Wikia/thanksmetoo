@@ -134,7 +134,7 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "modules",
-		"remoteExtPath": "Thanks/modules"
+		"remoteExtPath": "ThanksMeToo/modules"
 	},
 	"Hooks": {
 		"HistoryRevisionTools": [
