@@ -168,6 +168,7 @@
 			"ThanksHooks::onLogEventsListLineEnding"
 		]
 	},
+	"callback": "ThanksHooks::onRegistration",
 	"config": {
 		"ThanksSendToBots": {
 			"value": false
@@ -192,26 +193,6 @@
 				"rights",
 				"lock"
 			]
-		},
-		"ReverbNotifications": {
-			"value": {
-				"user-interest-thanks": {
-					"importance": 0
-				},
-				"user-interest-thanks-creation": {
-					"importance": 0,
-					"use-preference": "user-interest-thanks"
-				},
-				"user-interest-thanks-edit": {
-					"importance": 0,
-					"use-preference": "user-interest-thanks"
-				},
-				"user-interest-thanks-log": {
-					"importance": 0,
-					"use-preference": "user-interest-thanks"
-				}
-			},
-			"merge_strategy": "array_plus_2d"
 		}
 	},
 	"manifest_version": 2

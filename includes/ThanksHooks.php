@@ -9,6 +9,36 @@ use MediaWiki\MediaWikiServices;
  * @ingroup Extensions
  */
 class ThanksHooks {
+
+	/**
+	 * Setup extra configuration during MediaWiki setup process.
+	 *
+	 * @return boolean	True
+	 */
+	public static function onRegistration() {
+		global $wgReverbNotifications;
+		$reverbNotifications = [
+			"user-interest-thanks" => [
+				"importance" => 0
+			],
+			"user-interest-thanks-creation" => [
+				"importance" => 0,
+				"use-preference" => "user-interest-thanks"
+			],
+			"user-interest-thanks-edit" => [
+				"importance" => 0,
+				"use-preference" => "user-interest-thanks"
+			],
+			"user-interest-thanks-log" => [
+				"importance" => 0,
+				"use-preference" => "user-interest-thanks"
+			]
+		];
+		$wgReverbNotifications = array_merge($wgReverbNotifications, $reverbNotifications);
+
+		return true;
+	}
+
 	/**
 	 * ResourceLoaderTestModules hook handler
 	 *
