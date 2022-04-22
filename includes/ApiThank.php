@@ -8,12 +8,13 @@
 
 abstract class ApiThank extends ApiBase {
 	protected function dieOnBadUser(User $user) {
+		$userBlock = $user->getBlock();
 		if ($user->isAnon()) {
 			$this->dieWithError('thanks-error-notloggedin', 'notloggedin');
 		} elseif ($user->pingLimiter('thanks-notification')) {
 			$this->dieWithError(['thanks-error-ratelimited', $user->getName()], 'ratelimited');
-		} elseif ($user->isBlocked()) {
-			$this->dieBlocked($user->getBlock());
+		} elseif ($userBlock && $userBlock->isSitewide()) {
+			$this->dieBlocked($userBlock);
 		} elseif ($user->isBlockedGlobally()) {
 			$this->dieBlocked($user->getGlobalBlock());
 		}
@@ -44,7 +45,7 @@ abstract class ApiThank extends ApiBase {
 	 * @return bool Whether thanks has already been sent
 	 */
 	protected function haveAlreadyThanked(User $thanker, $uniqueId) {
-		$dbw = wfGetDB(DB_MASTER);
+		$dbw = wfGetDB(DB_PRIMARY);
 		$logWhere = ActorMigration::newMigration()->getWhere($dbw, 'log_user', $thanker);
 		return (bool)$dbw->selectRow(
 			['log_search', 'logging'] + $logWhere['tables'],

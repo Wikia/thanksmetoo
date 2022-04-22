@@ -32,5 +32,5 @@
 	"logentry-thanks-thank": "$1 {{GENDER:$2|изпрати благодарност на}} {{GENDER:$4|$3}}",
 	"logeventslist-thanks-log": "Дневник на благодарностите",
 	"thanks-confirmation-special-rev": "Искате ли да благодарите публично за тази редакция?",
-	"notification-link-text-view-post": "Виж коментар",
+	"notification-link-text-view-post": "Виж коментар"
 }

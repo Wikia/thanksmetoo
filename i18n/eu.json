@@ -26,5 +26,5 @@
 	"long-header-user-interest-thanks-edit": "[$1 $2] lankideak '''$3''' orrian egin {{GENDER:$4|duzun}} aldaketa {{GENDER:$2|eskertzen}} dizu.",
 	"log-name-thanks": "Eskertza erregistroa",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|wikilariak}} eskerrak eman dizkio {{GENDER:$4|$3}} wikilariari",
-	"notification-link-text-view-post": "Erakutsi iruzkina",
+	"notification-link-text-view-post": "Erakutsi iruzkina"
 }

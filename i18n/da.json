@@ -35,5 +35,5 @@
 	"log-description-thanks": "Nedenfor er en liste over brugere, som er blevet takket af andre brugere.",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|takkede}} {{GENDER:$4|$3}}",
 	"logeventslist-thanks-log": "Takkelog",
-	"notification-link-text-view-post": "Vis kommentar",
+	"notification-link-text-view-post": "Vis kommentar"
 }

@@ -137,17 +137,17 @@
 		"remoteExtPath": "Thanks/modules"
 	},
 	"Hooks": {
-		"HistoryRevisionTools": [
-			"ThanksHooks::insertThankLink"
+		"HistoryTools": [
+			"ThanksHooks::historyToolsAndDiffRevisionToolsHooksHandler"
 		],
 		"DiffRevisionTools": [
-			"ThanksHooks::insertThankLink"
+			"ThanksHooks::historyToolsAndDiffRevisionToolsHooksHandler"
 		],
 		"PageHistoryBeforeList": [
 			"ThanksHooks::onPageHistoryBeforeList"
 		],
-		"DiffViewHeader": [
-			"ThanksHooks::onDiffViewHeader"
+		"DifferenceEngineViewHeader": [
+			"ThanksHooks::onDifferenceEngineViewHeader"
 		],
 		"LocalUserCreated": [
 			"ThanksHooks::onAccountCreated"
@@ -192,27 +192,8 @@
 				"rights",
 				"lock"
 			]
-		},
-		"ReverbNotifications": {
-			"value": {
-				"user-interest-thanks": {
-					"importance": 0
-				},
-				"user-interest-thanks-creation": {
-					"importance": 0,
-					"use-preference": "user-interest-thanks"
-				},
-				"user-interest-thanks-edit": {
-					"importance": 0,
-					"use-preference": "user-interest-thanks"
-				},
-				"user-interest-thanks-log": {
-					"importance": 0,
-					"use-preference": "user-interest-thanks"
-				}
-			},
-			"merge_strategy": "array_plus_2d"
 		}
 	},
+	"callback": "ThanksHooks::onRegistration",
 	"manifest_version": 2
 }

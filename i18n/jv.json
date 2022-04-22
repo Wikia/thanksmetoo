@@ -39,5 +39,5 @@
 	"logentry-thanks-thank": "$1 {{GENDER:$2|matur nuwun}} marang {{GENDER:$4|$3}}",
 	"thanks-error-no-id-specified": "Panjenengan kudu nemtokaké ID révisian saperlu ngirim atur panuwun.",
 	"notification-link-text-view-post": "Deleng tanggepan",
-	"thanks-error-invalidpostid": "ID kiriman ora sah.",
+	"thanks-error-invalidpostid": "ID kiriman ora sah."
 }

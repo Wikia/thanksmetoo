@@ -30,5 +30,5 @@
 	"log-name-thanks": "Շնորհակալությունների գրանցամատյան",
 	"log-description-thanks": "Ստորև «շնորհակալություներ» ստացած մասնակիցների ցանկն է։",
 	"logentry-thanks-thank": "$1 մասնակիցը {{GENDER:$2|շնորհակալություն է}} հայտնել {{GENDER:$4|$3}} մասնակցին",
-	"notification-link-text-view-post": "Դիտել մեկնաբանությունը",
+	"notification-link-text-view-post": "Դիտել մեկնաբանությունը"
 }

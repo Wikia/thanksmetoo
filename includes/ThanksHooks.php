@@ -1,6 +1,8 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\UserIdentity;
 
 /**
  * Hooks for Thanks extension
@@ -39,16 +41,18 @@ class ThanksHooks {
 	 * Handler for HistoryRevisionTools and DiffRevisionTools hooks.
 	 * Inserts 'thank' link into revision interface
 	 *
-	 * @param  Revision      $rev    Revision object to add the thank link for
-	 * @param  array         &$links Links to add to the revision interface
-	 * @param  Revision|null $oldRev Revision object of the "old" revision when viewing a diff
-	 * @param  User          $user   The user performing the thanks.
-	 * @return bool
+	 * @param RevisionRecord $revRecord Revision object to add the thank link for
+	 * @param string[] &$links Links to add to the revision interface
+	 * @param RevisionRecord|null $prevRevRecord Revision object of the "old" revision when viewing a diff
+	 * @param UserIdentity $userIdentity The user performing the thanks.
+	 *
+	 * @return bool True or no return value to continue or false to abort
 	 */
-	public static function insertThankLink($rev, &$links, $oldRev, User $user) {
-		$recipientId = $rev->getUser();
-		$recipient = User::newFromId($recipientId);
-		$prev = $rev->getPrevious();
+	public function historyToolsAndDiffRevisionToolsHooksHandler(
+		RevisionRecord $revRecord, array &$links, ?RevisionRecord $prevRevRecord, UserIdentity $userIdentity ): bool {
+		$recipientId = $revRecord->getUser()->getId();
+		$recipient = MediaWikiServices::getInstance()->getUserFactory()->newFromId( $recipientId );
+		$prevRevisionId = $revRecord->getParentId();
 		// Don't let users thank themselves.
 		// Exclude anonymous users.
 		// Exclude users who are blocked.
@@ -56,15 +60,15 @@ class ThanksHooks {
 		// Check if there's other revisions between $prev and $oldRev
 		// (It supports discontinuous history created by Import or CX but
 		// prevents thanking diff across multiple revisions)
-		if (!$user->isAnon()
-			&& $recipientId !== $user->getId()
-			&& !$user->isBlocked()
-			&& !$user->isBlockedGlobally()
+		if ( !$userIdentity->isAnon()
+			&& $recipientId !== $userIdentity->getId()
+			&& $userIdentity->getBlock() === null
+			&& !$userIdentity->isBlockedGlobally()
 			&& self::canReceiveThanks($recipient)
-			&& !$rev->isDeleted(Revision::DELETED_TEXT)
-			&& (!$oldRev || !$prev || $prev->getId() === $oldRev->getId())
+			&& !$revRecord->isDeleted(RevisionRecord::DELETED_TEXT)
+			&& (!$prevRevRecord || !$prevRevisionId || $prevRevisionId === $prevRevRecord->getId())
 		) {
-			$links[] = self::generateThankElement($rev->getId(), $recipient);
+			$links[] = self::generateThankElement($revRecord->getId(), $recipient);
 		}
 		return true;
 	}
@@ -90,7 +94,7 @@ class ThanksHooks {
 	}
 
 	/**
-	 * Helper for self::insertThankLink
+	 * Helper for self::historyToolsAndDiffRevisionToolsHooksHandler
 	 * Creates either a thank link or thanked span based on users session
 	 *
 	 * @param  int    $id        Revision or log ID to generate the thank element for.
@@ -152,7 +156,7 @@ class ThanksHooks {
 	 * @return bool true in all cases
 	 */
 	public static function onPageHistoryBeforeList(&$page, $context) {
-		if ($context->getUser()->isLoggedIn()) {
+		if ($context->getUser()->isRegistered()) {
 			static::addThanksModule($context->getOutput());
 		}
 		return true;
@@ -161,14 +165,12 @@ class ThanksHooks {
 	/**
 	 * Handler for DiffViewHeader hook.
 	 *
-	 * @see    http://www.mediawiki.org/wiki/Manual:Hooks/DiffViewHeader
-	 * @param  DifferenceEngine $diff   DifferenceEngine object that's calling.
-	 * @param  Revision         $oldRev Revision object of the "old" revision (may be null/invalid)
-	 * @param  Revision         $newRev Revision object of the "new" revision
+	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/DifferenceEngineViewHeader
+	 * @param DifferenceEngine $diff DifferenceEngine object that's calling.
 	 * @return bool true in all cases
 	 */
-	public static function onDiffViewHeader($diff, $oldRev, $newRev) {
-		if ($diff->getUser()->isLoggedIn()) {
+	public static function onDifferenceEngineViewHeader( $diff ) {
+		if ($diff->getUser()->isRegistered()) {
 			static::addThanksModule($diff->getOutput());
 		}
 		return true;
@@ -186,7 +188,10 @@ class ThanksHooks {
 		// New users get echo preferences set that are not the default settings for existing users.
 		// Specifically, new users are opted into email notifications for thanks.
 		if (!$autocreated) {
-			$user->setOption('echo-subscriptions-email-edit-thank', true);
+			//TODO  martyna: we always return true so why this check??
+			MediaWikiServices::getInstance()
+				->getUserOptionsManager()
+				->setOption( $user, 'echo-subscriptions-email-edit-thank', true );
 			// HYD-4639
 			// $user->saveSettings();
 		}
@@ -206,18 +211,22 @@ class ThanksHooks {
 
 		// If the MobileFrontend extension is installed and the user is
 		// logged in or recipient is not a bot if bots cannot receive thanks, show a 'Thank' link.
-		if ($rev
-			&& class_exists('SpecialMobileDiff')
-			&& self::canReceiveThanks(User::newFromId($rev->getUser()))
-			&& $output->getUser()->isLoggedIn()
-		) {
-			$output->addModules(['ext.thanks.mobilediff']);
+		if ($rev) {
+			$user = MediaWikiServices::getInstance()
+				->getUserFactory()
+				->newFromId( $rev->getUser() );
+			if (class_exists('SpecialMobileDiff')
+				&& self::canReceiveThanks($user)
+				&& $output->getUser()->isRegistered()
+			) {
+				$output->addModules(['ext.thanks.mobilediff']);
 
-			if ($output->getRequest()->getSessionData('thanks-thanked-' . $rev->getId())) {
-				// User already sent thanks for this revision
-				$output->addJsConfigVars('wgThanksAlreadySent', true);
+				if ($output->getRequest()->getSessionData('thanks-thanked-' . $rev->getId())) {
+					// User already sent thanks for this revision
+					$output->addJsConfigVars('wgThanksAlreadySent', true);
+				}
+
 			}
-
 		}
 		return true;
 	}
@@ -300,5 +309,31 @@ class ThanksHooks {
 
 		// Add parentheses to match what's done with Thanks in revision lists and diff displays.
 		$ret .= ' ' . wfMessage('parentheses')->rawParams($thankLink)->escaped();
+	}
+
+	/**
+	 * Setup anything that needs to be configured before anything else runs.
+	 *
+	 * @return void
+	 */
+	public static function onRegistration() {
+		global $wgReverbNotifications;
+
+		$reverbNotifications = [
+			'user-interest-thanks' => [
+				'importance' => 0
+			],
+			'user-interest-thanks-creation' => [
+				'importance' => 0
+			],
+			'user-interest-thanks-edit' => [
+				'importance' => 0
+			],
+			'user-interest-thanks-log' => [
+				'importance' => 0
+			],
+		];
+
+		$wgReverbNotifications = array_merge( (array)$wgReverbNotifications, $reverbNotifications );
 	}
 }

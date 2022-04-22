@@ -37,5 +37,5 @@
 	"logeventslist-thanks-log": "Καταγραφή ευχαριστηρίων",
 	"thanks-error-no-id-specified": "Πρέπει να καθορίσετε ένα ID αναθεώρησης ή μητρώου για να στείλετε ευχαριστία.",
 	"notification-link-text-view-post": "Προβολή σχολίου",
-	"thanks-error-invalidpostid": "Το Post ID δεν είναι έγκυρο.",
+	"thanks-error-invalidpostid": "Το Post ID δεν είναι έγκυρο."
 }
