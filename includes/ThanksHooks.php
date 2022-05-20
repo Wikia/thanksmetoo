@@ -51,7 +51,9 @@ class ThanksHooks {
 	public function historyToolsAndDiffRevisionToolsHooksHandler(
 		RevisionRecord $revRecord, array &$links, ?RevisionRecord $prevRevRecord, UserIdentity $userIdentity ): bool {
 		$recipientId = $revRecord->getUser()->getId();
-		$recipient = MediaWikiServices::getInstance()->getUserFactory()->newFromId( $recipientId );
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		$recipient = $userFactory->newFromId( $recipientId );
+		$performer = $userFactory->newFromId( $userIdentity->getId() );
 		$prevRevisionId = $revRecord->getParentId();
 		// Don't let users thank themselves.
 		// Exclude anonymous users.
@@ -60,10 +62,10 @@ class ThanksHooks {
 		// Check if there's other revisions between $prev and $oldRev
 		// (It supports discontinuous history created by Import or CX but
 		// prevents thanking diff across multiple revisions)
-		if ( !$userIdentity->isAnon()
-			&& $recipientId !== $userIdentity->getId()
-			&& $userIdentity->getBlock() === null
-			&& !$userIdentity->isBlockedGlobally()
+		if ( !$performer->isAnon()
+			&& $recipientId !== $performer->getId()
+			&& $performer->getBlock() === null
+			&& !$performer->isBlockedGlobally()
 			&& self::canReceiveThanks($recipient)
 			&& !$revRecord->isDeleted(RevisionRecord::DELETED_TEXT)
 			&& (!$prevRevRecord || !$prevRevisionId || $prevRevisionId === $prevRevRecord->getId())
@@ -293,7 +295,9 @@ class ThanksHooks {
 		// Don't thank if no recipient,
 		// or if recipient is the current user or unable to receive thanks.
 		// Don't check for deleted revision (this avoids extraneous queries from Special:Log).
-		$recipient = $entry->getPerformer();
+		$recipient = MediaWikiServices::getInstance()
+			->getUserFactory()
+			->newFromId( $entry->getPerformerIdentity()->getId() );
 		if (!$recipient
 			|| $recipient->getId() === $wgUser->getId()
 			|| !self::canReceiveThanks($recipient)
