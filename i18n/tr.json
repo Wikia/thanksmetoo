@@ -44,5 +44,5 @@
 	"logeventslist-thanks-log": "Teşekkür günlüğü",
 	"thanks-error-no-id-specified": "Teşekkür edebilmek için bir sürüm numarası belirtmeniz gerekmektedir.",
 	"notification-link-text-view-post": "Yorum görüntüle",
-	"thanks-error-invalidpostid": "Konu ID geçerli değil.",
+	"thanks-error-invalidpostid": "Konu ID geçerli değil."
 }

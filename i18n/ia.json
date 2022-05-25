@@ -25,5 +25,5 @@
 	"log-description-thanks": "Ecce un lista de usatores regratiate per altere usatores.",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|regratiava}} {{GENDER:$4|$3}}",
 	"thanks-error-no-id-specified": "Tu debe specificar le ID de un version o de un registro pro inviar un regratiamento.",
-	"thanks-error-invalidpostid": "Le ID del message non es valide.",
+	"thanks-error-invalidpostid": "Le ID del message non es valide."
 }

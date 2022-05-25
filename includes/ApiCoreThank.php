@@ -6,7 +6,11 @@
  * @ingroup Extensions
  */
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
 use Reverb\Notification\NotificationBroadcast;
+use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\ParamValidator\TypeDef\NumericDef;
 
 class ApiCoreThank extends ApiThank {
 	/**
@@ -50,17 +54,19 @@ class ApiCoreThank extends ApiThank {
 			$revision = $this->getRevisionFromId($id);
 			$title = $this->getTitleFromRevision($revision);
 			$recipient = $this->getUserFromRevision($revision);
-			$recipientUsername = $revision->getUserText();
 
 			// If there is no parent revid of this revision, it's a page creation.
-			if (!(bool)$revision->getPrevious()) {
+			$previousRevision = MediaWikiServices::getInstance()
+				->getRevisionLookup()->getPreviousRevision( $revision );
+
+			if (!$previousRevision) {
 				$revcreation = true;
 			}
 		}
 
 		// Send thanks.
 		if ($this->userAlreadySentThanks($user, $type, $id)) {
-			$this->markResultSuccess($recipientUsername);
+			$this->markResultSuccess($recipientUsername->getName());
 		} else {
 			$this->dieOnBadRecipient($user, $recipient);
 			$this->sendThanks(
@@ -93,11 +99,13 @@ class ApiCoreThank extends ApiThank {
 	}
 
 	private function getRevisionFromId($revId) {
-		$revision = Revision::newFromId($revId);
+		$revision = MediaWikiServices::getInstance()
+			->getRevisionStore()
+			->getRevisionById( $revId );
 		// Revision ID 1 means an invalid argument was passed in.
 		if (!$revision || $revision->getId() === 1) {
 			$this->dieWithError('thanks-error-invalidrevision', 'invalidrevision');
-		} elseif ($revision->isDeleted(Revision::DELETED_TEXT)) {
+		} elseif ($revision->isDeleted(RevisionRecord::DELETED_TEXT)) {
 			$this->dieWithError('thanks-error-revdeleted', 'revdeleted');
 		}
 		return $revision;
@@ -131,8 +139,8 @@ class ApiCoreThank extends ApiThank {
 		return $logEntry;
 	}
 
-	private function getTitleFromRevision(Revision $revision) {
-		$title = Title::newFromID($revision->getPage());
+	private function getTitleFromRevision( RevisionRecord $revision ) {
+		$title = Title::newFromID($revision->getPage()->getId());
 		if (!$title instanceof Title) {
 			$this->dieWithError('thanks-error-notitle', 'notitle');
 		}
@@ -153,12 +161,14 @@ class ApiCoreThank extends ApiThank {
 		}
 	}
 
-	private function getUserFromRevision(Revision $revision) {
+	private function getUserFromRevision( RevisionRecord $revision ) {
 		$recipient = $revision->getUser();
 		if (!$recipient) {
 			$this->dieWithError('thanks-error-invalidrecipient', 'invalidrecipient');
 		}
-		return User::newFromId($recipient);
+		return MediaWikiServices::getInstance()
+			->getUserFactory()
+			->newFromId( $recipient->getId() );
 	}
 
 	private function getUserFromLog(LogEntry $logEntry) {
@@ -200,7 +210,7 @@ class ApiCoreThank extends ApiThank {
 		$agentUserTitle = Title::makeTitle(NS_USER_PROFILE, $agent->getName());
 		$recipientUserTitle = Title::makeTitle(NS_USER_PROFILE, $recipient->getName());
 		$broadcast = NotificationBroadcast::newSingle(
-			'user-interest-thanks-' . ($revcreation ? 'create' : 'edit'),
+			'user-interest-thanks-' . ($revcreation ? 'creation' : 'edit'),
 			$agent,
 			$recipient,
 			[
@@ -251,22 +261,22 @@ class ApiCoreThank extends ApiThank {
 	public function getAllowedParams() {
 		return [
 			'rev' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_MIN => 1,
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'integer',
+				NumericDef::PARAM_MIN => 1,
+				ParamValidator::PARAM_REQUIRED => false,
 			],
 			'log' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_MIN => 1,
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'integer',
+				NumericDef::PARAM_MIN => 1,
+				ParamValidator::PARAM_REQUIRED => false,
 			],
 			'token' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'source' => [
-				ApiBase::PARAM_TYPE => 'string',
-				ApiBase::PARAM_REQUIRED => false,
+				ParamValidator::PARAM_TYPE => 'string',
+				ParamValidator::PARAM_REQUIRED => false,
 			]
 		];
 	}

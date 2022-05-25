@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class SpecialThanks extends FormSpecialPage {
 	/**
 	 * API result
@@ -109,7 +111,7 @@ class SpecialThanks extends FormSpecialPage {
 		if ($this->type === null
 			|| (in_array($this->type, ['rev', 'log',]) && $this->id === '0')
 		) {
-			$form->suppressDefaultSubmit(true);
+			$form->suppressDefaultSubmit();
 		} else {
 			$form->setSubmitText($this->msg('thanks-submit')->escaped());
 		}
@@ -166,7 +168,9 @@ class SpecialThanks extends FormSpecialPage {
 	 */
 	public function onSuccess() {
 		$sender = $this->getUser();
-		$recipient = User::newFromName($this->result['recipient']);
+		$recipient = MediaWikiServices::getInstance()
+			->getUserFactory()
+			->newFromName( $this->result['recipient'] );
 		$link = Linker::userLink($recipient->getId(), $recipient->getName());
 
 		$msgKey = 'thanks-thanked-notice';

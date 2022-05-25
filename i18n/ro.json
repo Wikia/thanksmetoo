@@ -29,5 +29,5 @@
 	"logentry-thanks-thank": "$1 {{GENDER:$2|i-a mulțumit}} {{GENDER:$4|utilizatorului $3|utilizatoarei $3}}",
 	"thanks-error-no-id-specified": "Trebuie să precizați un ID de versiune pentru a trimite mulțumiri.",
 	"notification-link-text-view-post": "Vezi comentariul",
-	"thanks-error-invalidpostid": "ID-ul mesajului nu este valid.",
+	"thanks-error-invalidpostid": "ID-ul mesajului nu este valid."
 }

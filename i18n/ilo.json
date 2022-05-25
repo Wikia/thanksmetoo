@@ -25,5 +25,5 @@
 	"logentry-thanks-thank": "Ni $1 ket {{GENDER:$2|nagyaman}} kenni {{GENDER:$4|$3}}",
 	"thanks-error-no-id-specified": "Nasken a mainaganan ti ID ti panagbaliw tapno makaipatulod kadagiti panagyaman.",
 	"notification-link-text-view-post": "Kitaen ti komentario",
-	"thanks-error-invalidpostid": "Ti ID ti pablaak ket saan nga umiso.",
+	"thanks-error-invalidpostid": "Ti ID ti pablaak ket saan nga umiso."
 }

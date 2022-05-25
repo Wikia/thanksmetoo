@@ -28,5 +28,5 @@
 	"log-name-thanks": "આભાર નોંધ",
 	"log-description-thanks": "નીચે એવા સભ્યોની યાદિ આપી છે જેમનો અન્ય સભ્યોએ આભાર માન્યો હોય.",
 	"logentry-thanks-thank": "$1એ {{GENDER:$4|$3}}નો {{GENDER:$2|આભાર માન્યો}}",
-	"notification-link-text-view-post": "ટીપ્પણી જુઓ",
+	"notification-link-text-view-post": "ટીપ્પણી જુઓ"
 }

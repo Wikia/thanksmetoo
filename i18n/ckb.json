@@ -33,5 +33,5 @@
 	"log-name-thanks": "لۆگی سپاس",
 	"log-description-thanks": "ژێرەوە پێرستێکی لەو بەکارھێنەرانەن کە لە لایەن بەکارھێنەرانی ترەوە سپاسیان لێ کراوە.",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|سپاسی کرد}} لە {{GENDER:$4|$3}}",
-	"notification-link-text-view-post": "بۆچوون ببینە",
+	"notification-link-text-view-post": "بۆچوون ببینە"
 }

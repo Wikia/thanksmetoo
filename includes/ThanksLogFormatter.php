@@ -1,4 +1,8 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
+
 /**
  * This class formats log entries for thanks
  */
@@ -11,7 +15,9 @@ class ThanksLogFormatter extends LogFormatter {
 		$params = parent::getMessageParameters();
 		// Convert target from a pageLink to a userLink since the target is
 		// actually a user, not a page.
-		$recipient = User::newFromName($this->entry->getTarget()->getText(), false);
+		$recipient = MediaWikiServices::getInstance()
+			->getUserFactory()
+			->newFromName( $this->entry->getTarget()->getText(), UserNameUtils::RIGOR_NONE );
 		$params[2] = Message::rawParam($this->makeUserLink($recipient));
 		$params[3] = $recipient->getName();
 		return $params;

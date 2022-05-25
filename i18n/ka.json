@@ -28,5 +28,5 @@
 	"log-name-thanks": "„მადლობის“ ჟურნალი",
 	"log-description-thanks": "ქვემოთ მოცემულია მომხმარებელთა სია, რომელთაც სხვა მომხმარებლებმა გადაუხადეს მადლობა",
 	"logentry-thanks-thank": "$1 {{GENDER:$2|მადლობა გადაუხადა}} {{GENDER:$4|$3}}",
-	"logeventslist-thanks-log": "მადლობების ჟურნალი",
+	"logeventslist-thanks-log": "მადლობების ჟურნალი"
 }

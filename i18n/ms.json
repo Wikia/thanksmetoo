@@ -32,5 +32,5 @@
 	"logentry-thanks-thank": "$1 ucap terima kasih kepada $3",
 	"thanks-error-no-id-specified": "Anda hendaklah menyatakan ID semakan untuk mengirim ucapan terima kasih.",
 	"notification-link-text-view-post": "Lihat ulasan",
-	"thanks-error-invalidpostid": "ID kiriam tak sah.",
+	"thanks-error-invalidpostid": "ID kiriam tak sah."
 }
