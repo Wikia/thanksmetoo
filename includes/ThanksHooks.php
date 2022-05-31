@@ -216,7 +216,7 @@ class ThanksHooks {
 		if ($rev) {
 			$user = MediaWikiServices::getInstance()
 				->getUserFactory()
-				->newFromId( $rev->getUser() );
+				->newFromId( $rev->getUser()->getId() );
 			if (class_exists('SpecialMobileDiff')
 				&& self::canReceiveThanks($user)
 				&& $output->getUser()->isRegistered()
