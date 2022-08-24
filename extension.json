@@ -137,12 +137,8 @@
 		"remoteExtPath": "Thanks/modules"
 	},
 	"Hooks": {
-		"HistoryTools": [
-			"ThanksHooks::historyToolsAndDiffRevisionToolsHooksHandler"
-		],
-		"DiffRevisionTools": [
-			"ThanksHooks::historyToolsAndDiffRevisionToolsHooksHandler"
-		],
+		"HistoryTools": "main",
+		"DiffTools": "main",
 		"PageHistoryBeforeList": [
 			"ThanksHooks::onPageHistoryBeforeList"
 		],
@@ -167,6 +163,12 @@
 		"LogEventsListLineEnding": [
 			"ThanksHooks::onLogEventsListLineEnding"
 		]
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "ThanksHooks",
+			"services": ["UserFactory"]
+		}
 	},
 	"config": {
 		"ThanksSendToBots": {
