@@ -2,6 +2,7 @@
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
 
 /**
@@ -10,7 +11,15 @@ use MediaWiki\User\UserIdentity;
  * @file
  * @ingroup Extensions
  */
-class ThanksHooks {
+class ThanksHooks implements \MediaWiki\Hook\HistoryToolsHook, \MediaWiki\Diff\Hook\DiffToolsHook {
+
+	/** @var UserFactory */
+	private $userFactory;
+
+	public function __construct( UserFactory $userFactory ) {
+		$this->userFactory = $userFactory;
+	}
+
 	/**
 	 * ResourceLoaderTestModules hook handler
 	 *
@@ -37,6 +46,15 @@ class ThanksHooks {
 		return true;
 	}
 
+
+	public function onDiffTools( $newRevRecord, &$links, $oldRevRecord, $userIdentity ) {
+		$this->historyToolsAndDiffRevisionToolsHooksHandler( $newRevRecord, $links, $oldRevRecord, $userIdentity );
+	}
+
+	public function onHistoryTools( $revRecord, &$links, $prevRevRecord, $userIdentity ) {
+		$this->historyToolsAndDiffRevisionToolsHooksHandler( $revRecord, $links, $prevRevRecord, $userIdentity );
+	}
+
 	/**
 	 * Handler for HistoryRevisionTools and DiffRevisionTools hooks.
 	 * Inserts 'thank' link into revision interface
@@ -44,16 +62,24 @@ class ThanksHooks {
 	 * @param RevisionRecord $revRecord Revision object to add the thank link for
 	 * @param string[] &$links Links to add to the revision interface
 	 * @param RevisionRecord|null $prevRevRecord Revision object of the "old" revision when viewing a diff
-	 * @param UserIdentity $userIdentity The user performing the thanks.
-	 *
-	 * @return bool True or no return value to continue or false to abort
+	 * @param UserIdentity $actingUser The user performing the thanks.
 	 */
 	public function historyToolsAndDiffRevisionToolsHooksHandler(
-		RevisionRecord $revRecord, array &$links, ?RevisionRecord $prevRevRecord, UserIdentity $userIdentity ): bool {
-		$recipientId = $revRecord->getUser()->getId();
-		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
-		$recipient = $userFactory->newFromId( $recipientId );
-		$performer = $userFactory->newFromId( $userIdentity->getId() );
+		RevisionRecord $revRecord,
+		array &$links,
+		?RevisionRecord $prevRevRecord,
+		UserIdentity $actingUser
+	): void {
+		$revAuthor = $revRecord->getUser();
+		// Disallow thanks if this revision or its authorship info was deleted (CATS-3055)
+		if ( $revAuthor === null ) {
+			return;
+		}
+
+		$recipientId =  $revAuthor->getId();
+
+		$recipient = $this->userFactory->newFromUserIdentity( $revAuthor );
+		$performer = $this->userFactory->newFromUserIdentity( $actingUser );
 		$prevRevisionId = $revRecord->getParentId();
 		// Don't let users thank themselves.
 		// Exclude anonymous users.
@@ -72,7 +98,6 @@ class ThanksHooks {
 		) {
 			$links[] = self::generateThankElement($revRecord->getId(), $recipient);
 		}
-		return true;
 	}
 
 	/**
