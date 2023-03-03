@@ -1,9 +1,30 @@
 <?php
 
+namespace ThanksMeToo;
+
+use Article;
+use CategoryPage;
+use ConfigException;
+use DatabaseLogEntry;
+use DifferenceEngine;
+use Html;
+use ImagePage;
+use LogEventsList;
+use MediaWiki\Diff\Hook\DiffToolsHook;
+use MediaWiki\Hook\HistoryToolsHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserIdentity;
+use MobileContext;
+use OutputPage;
+use Page;
+use RequestContext;
+use ResourceLoader;
+use Skin;
+use SpecialPage;
+use User;
+use WikiPage;
 
 /**
  * Hooks for Thanks extension
@@ -11,7 +32,7 @@ use MediaWiki\User\UserIdentity;
  * @file
  * @ingroup Extensions
  */
-class ThanksHooks implements \MediaWiki\Hook\HistoryToolsHook, \MediaWiki\Diff\Hook\DiffToolsHook {
+class ThanksHooks implements HistoryToolsHook, DiffToolsHook {
 
 	/** @var UserFactory */
 	private $userFactory;

@@ -1,7 +1,12 @@
 <?php
 
+namespace ThanksMeToo;
+
+use LogFormatter;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserNameUtils;
+use Message;
+use Title;
 
 /**
  * This class formats log entries for thanks

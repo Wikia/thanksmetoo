@@ -6,9 +6,18 @@
  * @ingroup Extensions
  */
 
+namespace ThanksMeToo;
+
+use ActorMigration;
+use ApiBase;
+use DatabaseLogEntry;
+use LogEntry;
+use ManualLogEntry;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use Reverb\Notification\NotificationBroadcast;
+use Title;
+use User;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\NumericDef;
 

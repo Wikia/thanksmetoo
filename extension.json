@@ -25,7 +25,7 @@
 		}
 	},
 	"SpecialPages": {
-		"Thanks": "SpecialThanks"
+		"Thanks": "ThanksMeToo\\SpecialThanks"
 	},
 	"LogTypes": [
 		"thanks"
@@ -34,10 +34,10 @@
 		"thanks": true
 	},
 	"LogActionsHandlers": {
-		"thanks/*": "ThanksLogFormatter"
+		"thanks/*": "ThanksMeToo\\ThanksLogFormatter"
 	},
 	"APIModules": {
-		"thank": "ApiCoreThank"
+		"thank": "ThanksMeToo\\ApiCoreThank"
 	},
 	"MessagesDirs": {
 		"Thanks": [
@@ -47,12 +47,8 @@
 	"ExtensionMessagesFiles": {
 		"ThanksAlias": "Thanks.alias.php"
 	},
-	"AutoloadClasses": {
-		"ThanksHooks": "src/ThanksHooks.php",
-		"ApiThank": "src/ApiThank.php",
-		"ApiCoreThank": "src/ApiCoreThank.php",
-		"ThanksLogFormatter": "src/ThanksLogFormatter.php",
-		"SpecialThanks": "src/SpecialThanks.php"
+	"AutoloadNamespaces": {
+		"ThanksMeToo\\": "src/"
 	},
 	"ResourceModules": {
 		"ext.thanks.images": {
@@ -140,33 +136,33 @@
 		"HistoryTools": "main",
 		"DiffTools": "main",
 		"PageHistoryBeforeList": [
-			"ThanksHooks::onPageHistoryBeforeList"
+			"ThanksMeToo\\ThanksHooks::onPageHistoryBeforeList"
 		],
 		"DifferenceEngineViewHeader": [
-			"ThanksHooks::onDifferenceEngineViewHeader"
+			"ThanksMeToo\\ThanksHooks::onDifferenceEngineViewHeader"
 		],
 		"LocalUserCreated": [
-			"ThanksHooks::onAccountCreated"
+			"ThanksMeToo\\ThanksHooks::onAccountCreated"
 		],
 		"BeforeSpecialMobileDiffDisplay": [
-			"ThanksHooks::onBeforeSpecialMobileDiffDisplay"
+			"ThanksMeToo\\ThanksHooks::onBeforeSpecialMobileDiffDisplay"
 		],
 		"GetLogTypesOnUser": [
-			"ThanksHooks::onGetLogTypesOnUser"
+			"ThanksMeToo\\ThanksHooks::onGetLogTypesOnUser"
 		],
 		"BeforePageDisplay": [
-			"ThanksHooks::onBeforePageDisplay"
+			"ThanksMeToo\\ThanksHooks::onBeforePageDisplay"
 		],
 		"ResourceLoaderTestModules": [
-			"ThanksHooks::onResourceLoaderTestModules"
+			"ThanksMeToo\\ThanksHooks::onResourceLoaderTestModules"
 		],
 		"LogEventsListLineEnding": [
-			"ThanksHooks::onLogEventsListLineEnding"
+			"ThanksMeToo\\ThanksHooks::onLogEventsListLineEnding"
 		]
 	},
 	"HookHandlers": {
 		"main": {
-			"class": "ThanksHooks",
+			"class": "ThanksMeToo\\ThanksHooks",
 			"services": ["UserFactory"]
 		}
 	},
@@ -196,6 +192,6 @@
 			]
 		}
 	},
-	"callback": "ThanksHooks::onRegistration",
+	"callback": "ThanksMeToo\\ThanksHooks::onRegistration",
 	"manifest_version": 2
 }
