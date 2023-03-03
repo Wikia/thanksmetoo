@@ -1,25 +1,27 @@
 {
 	"require-dev": {
-		"jakub-onderka/php-console-highlighter": "0.3.2",
-		"jakub-onderka/php-parallel-lint": "1.0.0",
-		"mediawiki/mediawiki-phan-config": "0.3.0",
-		"mediawiki/minus-x": "0.3.1",
-        "hydrawiki/hydrawiki-codesniffer": "^1.0"
+		"mediawiki/mediawiki-codesniffer": "38.0.0",
+		"mediawiki/mediawiki-phan-config": "^0.11.1",
+		"mediawiki/minus-x": "^1.1",
+		"seld/jsonlint": "^1.7"
 	},
-    "scripts": {
-        "test": [
-            "parallel-lint . --exclude vendor --exclude node_modules",
-            "phpcs -p -s",
-            "minus-x check .",
-            "phpunit",
-            "npm test"
-        ],
-        "fix": [
-            "minus-x fix .",
-            "phpcbf"
-        ]
-    },
+	"scripts": {
+		"lint": [
+			"phpcs -p -s",
+			"minus-x check ."
+		],
+		"test": [
+			"phpcs -p -s",
+			"minus-x check .",
+			"phpunit",
+			"npm test"
+		],
+		"fix": [
+			"minus-x fix .",
+			"phpcbf"
+		]
+	},
 	"extra": {
-		"phan-taint-check-plugin": "1.5.0"
+		"phan-taint-check-plugin": "4.0.0"
 	}
 }
