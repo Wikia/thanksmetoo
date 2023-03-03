@@ -12,7 +12,7 @@ use Reverb\Notification\NotificationBroadcast;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\ParamValidator\TypeDef\NumericDef;
 
-class ApiCoreThank extends ApiThank {
+class ApiCoreThank extends ApiBase {
 	/**
 	 * Perform the API request.
 	 */
@@ -90,7 +90,7 @@ class ApiCoreThank extends ApiThank {
 	 * @param int $id The revision or log ID.
 	 * @return bool
 	 */
-	protected function userAlreadySentThanks( User $user, $type, $id ) {
+	private function userAlreadySentThanks( User $user, $type, $id ) {
 		if ( $type === 'rev' ) {
 			// For b/c with old-style keys
 			$type = '';
@@ -117,7 +117,7 @@ class ApiCoreThank extends ApiThank {
 	 * @param int $logId The log entry ID.
 	 * @return DatabaseLogEntry
 	 */
-	protected function getLogEntryFromId( $logId ) {
+	private function getLogEntryFromId( $logId ) {
 		$logEntry = DatabaseLogEntry::newFromId( $logId, wfGetDB( DB_REPLICA ) );
 
 		if ( !$logEntry ) {
@@ -196,7 +196,7 @@ class ApiCoreThank extends ApiThank {
 	 *
 	 * @return void
 	 */
-	protected function sendThanks(
+	private function sendThanks(
 		User $agent, $type, $id, $excerpt, User $recipient, $source, Title $title, $revcreation
 	) {
 		$uniqueId = $type . '-' . $id;
@@ -279,6 +279,86 @@ class ApiCoreThank extends ApiThank {
 				ParamValidator::PARAM_REQUIRED => false,
 			]
 		];
+	}
+
+	private function dieOnBadUser( User $user ) {
+		$userBlock = $user->getBlock();
+		if ( $user->isAnon() ) {
+			$this->dieWithError( 'thanks-error-notloggedin', 'notloggedin' );
+		} elseif ( $user->pingLimiter( 'thanks-notification' ) ) {
+			$this->dieWithError( [ 'thanks-error-ratelimited', $user->getName() ], 'ratelimited' );
+		} elseif ( $userBlock && $userBlock->isSitewide() ) {
+			$this->dieBlocked( $userBlock );
+		} elseif ( $user->isBlockedGlobally() ) {
+			$this->dieBlocked( $user->getGlobalBlock() );
+		}
+	}
+
+	private function dieOnBadRecipient( User $user, User $recipient ) {
+		if ( $user->getId() === $recipient->getId() ) {
+			$this->dieWithError( 'thanks-error-invalidrecipient-self', 'invalidrecipient' );
+		} elseif ( !$this->getConfig()->get( 'ThanksSendToBots' ) && $recipient->isBot() ) {
+			$this->dieWithError( 'thanks-error-invalidrecipient-bot', 'invalidrecipient' );
+		}
+	}
+
+	private function markResultSuccess( $recipientName ) {
+		$this->getResult()->addValue( null, 'result', [
+			'success' => 1,
+			'recipient' => $recipientName,
+		] );
+	}
+
+	/**
+	 * This checks the log_search data.
+	 *
+	 * @param User $thanker The user sending the thanks.
+	 * @param string $uniqueId The identifier for the thanks.
+	 * @return bool Whether thanks has already been sent
+	 */
+	private function haveAlreadyThanked( User $thanker, $uniqueId ) {
+		$dbw = wfGetDB( DB_PRIMARY );
+		$logWhere = ActorMigration::newMigration()->getWhere( $dbw, 'log_user', $thanker );
+		return (bool)$dbw->selectRow(
+			[ 'log_search', 'logging' ] + $logWhere['tables'],
+			[ 'ls_value' ],
+			[
+				$logWhere['conds'],
+				'ls_field' => 'thankid',
+				'ls_value' => $uniqueId,
+			],
+			__METHOD__,
+			[],
+			[ 'logging' => [ 'INNER JOIN', 'ls_log_id=log_id' ] ] + $logWhere['joins']
+		);
+	}
+
+	/**
+	 * @param User $user The user performing the thanks (and the log entry).
+	 * @param User $recipient The target of the thanks (and the log entry).
+	 * @param string $uniqueId A unique Id to identify the event being thanked for, to use
+	 *                          when checking for duplicate thanks
+	 */
+	private function logThanks( User $user, User $recipient, $uniqueId ) {
+		if ( !$this->getConfig()->get( 'ThanksLogging' ) ) {
+			return;
+		}
+		$logEntry = new ManualLogEntry( 'thanks', 'thank' );
+		$logEntry->setPerformer( $user );
+		$logEntry->setRelations( [ 'thankid' => $uniqueId ] );
+		$target = $recipient->getUserPage();
+		$logEntry->setTarget( $target );
+		$logId = $logEntry->insert();
+		$logEntry->publish( $logId, 'udp' );
+	}
+
+	public function needsToken() {
+		return 'csrf';
+	}
+
+	public function isWriteMode() {
+		// Writes to the Echo database and sometimes log tables.
+		return true;
 	}
 
 	public function getHelpUrls() {
