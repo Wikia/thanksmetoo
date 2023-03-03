@@ -7,49 +7,49 @@
  */
 
 abstract class ApiThank extends ApiBase {
-	protected function dieOnBadUser(User $user) {
+	protected function dieOnBadUser( User $user ) {
 		$userBlock = $user->getBlock();
-		if ($user->isAnon()) {
-			$this->dieWithError('thanks-error-notloggedin', 'notloggedin');
-		} elseif ($user->pingLimiter('thanks-notification')) {
-			$this->dieWithError(['thanks-error-ratelimited', $user->getName()], 'ratelimited');
-		} elseif ($userBlock && $userBlock->isSitewide()) {
-			$this->dieBlocked($userBlock);
-		} elseif ($user->isBlockedGlobally()) {
-			$this->dieBlocked($user->getGlobalBlock());
+		if ( $user->isAnon() ) {
+			$this->dieWithError( 'thanks-error-notloggedin', 'notloggedin' );
+		} elseif ( $user->pingLimiter( 'thanks-notification' ) ) {
+			$this->dieWithError( [ 'thanks-error-ratelimited', $user->getName() ], 'ratelimited' );
+		} elseif ( $userBlock && $userBlock->isSitewide() ) {
+			$this->dieBlocked( $userBlock );
+		} elseif ( $user->isBlockedGlobally() ) {
+			$this->dieBlocked( $user->getGlobalBlock() );
 		}
 	}
 
-	protected function dieOnBadRecipient(User $user, User $recipient) {
+	protected function dieOnBadRecipient( User $user, User $recipient ) {
 		global $wgThanksSendToBots;
 
-		if ($user->getId() === $recipient->getId()) {
-			$this->dieWithError('thanks-error-invalidrecipient-self', 'invalidrecipient');
-		} elseif (!$wgThanksSendToBots && $recipient->isBot()) {
-			$this->dieWithError('thanks-error-invalidrecipient-bot', 'invalidrecipient');
+		if ( $user->getId() === $recipient->getId() ) {
+			$this->dieWithError( 'thanks-error-invalidrecipient-self', 'invalidrecipient' );
+		} elseif ( !$wgThanksSendToBots && $recipient->isBot() ) {
+			$this->dieWithError( 'thanks-error-invalidrecipient-bot', 'invalidrecipient' );
 		}
 	}
 
-	protected function markResultSuccess($recipientName) {
-		$this->getResult()->addValue(null, 'result', [
+	protected function markResultSuccess( $recipientName ) {
+		$this->getResult()->addValue( null, 'result', [
 			'success' => 1,
 			'recipient' => $recipientName,
-		]);
+		] );
 	}
 
 	/**
 	 * This checks the log_search data.
 	 *
-	 * @param  User   $thanker  The user sending the thanks.
-	 * @param  string $uniqueId The identifier for the thanks.
+	 * @param User $thanker The user sending the thanks.
+	 * @param string $uniqueId The identifier for the thanks.
 	 * @return bool Whether thanks has already been sent
 	 */
-	protected function haveAlreadyThanked(User $thanker, $uniqueId) {
-		$dbw = wfGetDB(DB_PRIMARY);
-		$logWhere = ActorMigration::newMigration()->getWhere($dbw, 'log_user', $thanker);
+	protected function haveAlreadyThanked( User $thanker, $uniqueId ) {
+		$dbw = wfGetDB( DB_PRIMARY );
+		$logWhere = ActorMigration::newMigration()->getWhere( $dbw, 'log_user', $thanker );
 		return (bool)$dbw->selectRow(
-			['log_search', 'logging'] + $logWhere['tables'],
-			['ls_value'],
+			[ 'log_search', 'logging' ] + $logWhere['tables'],
+			[ 'ls_value' ],
 			[
 				$logWhere['conds'],
 				'ls_field' => 'thankid',
@@ -57,28 +57,28 @@ abstract class ApiThank extends ApiBase {
 			],
 			__METHOD__,
 			[],
-			['logging' => ['INNER JOIN', 'ls_log_id=log_id']] + $logWhere['joins']
+			[ 'logging' => [ 'INNER JOIN', 'ls_log_id=log_id' ] ] + $logWhere['joins']
 		);
 	}
 
 	/**
-	 * @param User   $user      The user performing the thanks (and the log entry).
-	 * @param User   $recipient The target of the thanks (and the log entry).
-	 * @param string $uniqueId  A unique Id to identify the event being thanked for, to use
+	 * @param User $user The user performing the thanks (and the log entry).
+	 * @param User $recipient The target of the thanks (and the log entry).
+	 * @param string $uniqueId A unique Id to identify the event being thanked for, to use
 	 *                          when checking for duplicate thanks
 	 */
-	protected function logThanks(User $user, User $recipient, $uniqueId) {
+	protected function logThanks( User $user, User $recipient, $uniqueId ) {
 		global $wgThanksLogging;
-		if (!$wgThanksLogging) {
+		if ( !$wgThanksLogging ) {
 			return;
 		}
-		$logEntry = new ManualLogEntry('thanks', 'thank');
-		$logEntry->setPerformer($user);
-		$logEntry->setRelations(['thankid' => $uniqueId]);
+		$logEntry = new ManualLogEntry( 'thanks', 'thank' );
+		$logEntry->setPerformer( $user );
+		$logEntry->setRelations( [ 'thankid' => $uniqueId ] );
 		$target = $recipient->getUserPage();
-		$logEntry->setTarget($target);
+		$logEntry->setTarget( $target );
 		$logId = $logEntry->insert();
-		$logEntry->publish($logId, 'udp');
+		$logEntry->publish( $logId, 'udp' );
 	}
 
 	public function needsToken() {

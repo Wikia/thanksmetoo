@@ -6,26 +6,26 @@ class SpecialThanks extends FormSpecialPage {
 	/**
 	 * API result
 	 *
-	 * @var array $result
+	 * @var array
 	 */
 	protected $result;
 
 	/**
 	 * 'rev' for revision, 'log' for log entry, null if no ID is specified
 	 *
-	 * @var string $type
+	 * @var string
 	 */
 	protected $type;
 
 	/**
 	 * Revision or Log ID ('0' = invalid)
 	 *
-	 * @var string $id
+	 * @var string
 	 */
 	protected $id;
 
 	public function __construct() {
-		parent::__construct('Thanks');
+		parent::__construct( 'Thanks' );
 	}
 
 	public function doesWrites() {
@@ -37,24 +37,24 @@ class SpecialThanks extends FormSpecialPage {
 	 *
 	 * @param string $par The subpage name.
 	 */
-	protected function setParameter($par) {
-		if ($par === null || $par === '') {
+	protected function setParameter( $par ) {
+		if ( $par === null || $par === '' ) {
 			$this->type = null;
 			return;
 		}
 
-		$tokens = explode('/', $par);
-		if (strtolower($tokens[0]) === 'log') {
+		$tokens = explode( '/', $par );
+		if ( strtolower( $tokens[0] ) === 'log' ) {
 			$this->type = 'log';
 			// Make sure there's a numeric ID specified as the subpage.
-			if (count($tokens) === 1 || $tokens[1] === '' || !(ctype_digit($tokens[1]))) {
+			if ( count( $tokens ) === 1 || $tokens[1] === '' || !( ctype_digit( $tokens[1] ) ) ) {
 				$this->id = '0';
 			} else {
 				$this->id = $tokens[1];
 			}
 		} else {
 			$this->type = 'rev';
-			if (!(ctype_digit($par))) { // Revision ID is not an integer.
+			if ( !( ctype_digit( $par ) ) ) { // Revision ID is not an integer.
 				$this->id = '0';
 			} else {
 				$this->id = $par;
@@ -90,16 +90,16 @@ class SpecialThanks extends FormSpecialPage {
 	 * @return string
 	 */
 	protected function preText() {
-		if ($this->type === null) {
+		if ( $this->type === null ) {
 			$msgKey = 'thanks-error-no-id-specified';
-		} elseif ($this->type === 'rev' && $this->id === '0') {
+		} elseif ( $this->type === 'rev' && $this->id === '0' ) {
 			$msgKey = 'thanks-error-invalidrevision';
-		} elseif ($this->type === 'log' && $this->id === '0') {
+		} elseif ( $this->type === 'log' && $this->id === '0' ) {
 			$msgKey = 'thanks-error-invalid-log-id';
 		} else {
 			$msgKey = 'thanks-confirmation-special-' . $this->type;
 		}
-		return '<p>' . $this->msg($msgKey)->escaped() . '</p>';
+		return '<p>' . $this->msg( $msgKey )->escaped() . '</p>';
 	}
 
 	/**
@@ -107,13 +107,13 @@ class SpecialThanks extends FormSpecialPage {
 	 *
 	 * @param HTMLForm $form The form object to modify.
 	 */
-	protected function alterForm(HTMLForm $form) {
-		if ($this->type === null
-			|| (in_array($this->type, ['rev', 'log',]) && $this->id === '0')
+	protected function alterForm( HTMLForm $form ) {
+		if ( $this->type === null
+			|| ( in_array( $this->type, [ 'rev', 'log', ] ) && $this->id === '0' )
 		) {
 			$form->suppressDefaultSubmit();
 		} else {
-			$form->setSubmitText($this->msg('thanks-submit')->escaped());
+			$form->setSubmitText( $this->msg( 'thanks-submit' )->escaped() );
 		}
 	}
 
@@ -127,12 +127,12 @@ class SpecialThanks extends FormSpecialPage {
 	/**
 	 * Call the API internally.
 	 *
-	 * @param  string[] $data The form data.
+	 * @param string[] $data The form data.
 	 * @return Status
 	 */
-	public function onSubmit(array $data) {
-		if (!isset($data['id'])) {
-			return Status::newFatal('thanks-error-invalidrevision');
+	public function onSubmit( array $data ) {
+		if ( !isset( $data['id'] ) ) {
+			return Status::newFatal( 'thanks-error-invalidrevision' );
 		}
 
 		$requestData = [
@@ -155,11 +155,11 @@ class SpecialThanks extends FormSpecialPage {
 
 		try {
 			$api->execute();
-		} catch (ApiUsageException $e) {
-			return Status::wrap($e->getStatusValue());
+		} catch ( ApiUsageException $e ) {
+			return Status::wrap( $e->getStatusValue() );
 		}
 
-		$this->result = $api->getResult()->getResultData(['result']);
+		$this->result = $api->getResult()->getResultData( [ 'result' ] );
 		return Status::newGood();
 	}
 
@@ -171,14 +171,14 @@ class SpecialThanks extends FormSpecialPage {
 		$recipient = MediaWikiServices::getInstance()
 			->getUserFactory()
 			->newFromName( $this->result['recipient'] );
-		$link = Linker::userLink($recipient->getId(), $recipient->getName());
+		$link = Linker::userLink( $recipient->getId(), $recipient->getName() );
 
 		$msgKey = 'thanks-thanked-notice';
 
-		$msg = $this->msg($msgKey)
-			->rawParams($link)
-			->params($recipient->getName(), $sender->getName());
-		$this->getOutput()->addHTML($msg->parse());
+		$msg = $this->msg( $msgKey )
+			->rawParams( $link )
+			->params( $recipient->getName(), $sender->getName() );
+		$this->getOutput()->addHTML( $msg->parse() );
 	}
 
 	public function isListed() {
