@@ -48,11 +48,11 @@
 		"ThanksAlias": "Thanks.alias.php"
 	},
 	"AutoloadClasses": {
-		"ThanksHooks": "includes/ThanksHooks.php",
-		"ApiThank": "includes/ApiThank.php",
-		"ApiCoreThank": "includes/ApiCoreThank.php",
-		"ThanksLogFormatter": "includes/ThanksLogFormatter.php",
-		"SpecialThanks": "includes/SpecialThanks.php"
+		"ThanksHooks": "src/ThanksHooks.php",
+		"ApiThank": "src/ApiThank.php",
+		"ApiCoreThank": "src/ApiCoreThank.php",
+		"ThanksLogFormatter": "src/ThanksLogFormatter.php",
+		"SpecialThanks": "src/SpecialThanks.php"
 	},
 	"ResourceModules": {
 		"ext.thanks.images": {
