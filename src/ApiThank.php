@@ -21,11 +21,9 @@ abstract class ApiThank extends ApiBase {
 	}
 
 	protected function dieOnBadRecipient( User $user, User $recipient ) {
-		global $wgThanksSendToBots;
-
 		if ( $user->getId() === $recipient->getId() ) {
 			$this->dieWithError( 'thanks-error-invalidrecipient-self', 'invalidrecipient' );
-		} elseif ( !$wgThanksSendToBots && $recipient->isBot() ) {
+		} elseif ( !$this->getConfig()->get( 'ThanksSendToBots' ) && $recipient->isBot() ) {
 			$this->dieWithError( 'thanks-error-invalidrecipient-bot', 'invalidrecipient' );
 		}
 	}
@@ -68,8 +66,7 @@ abstract class ApiThank extends ApiBase {
 	 *                          when checking for duplicate thanks
 	 */
 	protected function logThanks( User $user, User $recipient, $uniqueId ) {
-		global $wgThanksLogging;
-		if ( !$wgThanksLogging ) {
+		if ( !$this->getConfig()->get( 'ThanksLogging' ) ) {
 			return;
 		}
 		$logEntry = new ManualLogEntry( 'thanks', 'thank' );

@@ -2,13 +2,6 @@
 /**
  * Integration tests for the Thanks API module
  *
- * @covers ApiCoreThank
- *
- * @group Thanks
- * @group Database
- * @group medium
- * @group API
- *
  * @author Addshore
  */
 

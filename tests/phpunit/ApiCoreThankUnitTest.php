@@ -2,9 +2,6 @@
 /**
  * Unit tests for the Thanks API module
  *
- * @group Thanks
- * @group API
- *
  * @author Addshore
  */
 
