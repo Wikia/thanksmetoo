@@ -11,7 +11,7 @@
 	"license-name": "MIT",
 	"type": "other",
 	"requires": {
-		"MediaWiki": ">= 1.31.0",
+		"MediaWiki": ">= 1.39.0",
 		"extensions": {
 			"Reverb": "*"
 		}
@@ -40,7 +40,16 @@
 		"thanks/*": "ThanksMeToo\\ThanksLogFormatter"
 	},
 	"APIModules": {
-		"thank": "ThanksMeToo\\ApiCoreThank"
+		"thank": {
+			"class": "ThanksMeToo\\ApiCoreThank",
+			"services": [
+				"UserFactory",
+				"DBLoadBalancer",
+				"Reverb\\Notification\\NotificationBroadcastFactory",
+				"RevisionStore",
+				"RevisionLookup"
+			]
+		}
 	},
 	"MessagesDirs": {
 		"Thanks": [
