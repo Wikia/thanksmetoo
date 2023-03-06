@@ -135,35 +135,26 @@
 	"Hooks": {
 		"HistoryTools": "main",
 		"DiffTools": "main",
-		"PageHistoryBeforeList": [
-			"ThanksMeToo\\ThanksHooks::onPageHistoryBeforeList"
-		],
-		"DifferenceEngineViewHeader": [
-			"ThanksMeToo\\ThanksHooks::onDifferenceEngineViewHeader"
-		],
-		"LocalUserCreated": [
-			"ThanksMeToo\\ThanksHooks::onAccountCreated"
-		],
-		"BeforeSpecialMobileDiffDisplay": [
-			"ThanksMeToo\\ThanksHooks::onBeforeSpecialMobileDiffDisplay"
-		],
-		"GetLogTypesOnUser": [
-			"ThanksMeToo\\ThanksHooks::onGetLogTypesOnUser"
-		],
-		"BeforePageDisplay": [
-			"ThanksMeToo\\ThanksHooks::onBeforePageDisplay"
-		],
-		"ResourceLoaderTestModules": [
-			"ThanksMeToo\\ThanksHooks::onResourceLoaderTestModules"
-		],
-		"LogEventsListLineEnding": [
-			"ThanksMeToo\\ThanksHooks::onLogEventsListLineEnding"
-		]
+		"PageHistoryBeforeList": "main",
+		"DifferenceEngineViewHeader": "main",
+		"LocalUserCreated": "main",
+		"BeforeSpecialMobileDiffDisplay": "main",
+		"GetLogTypesOnUser": "main",
+		"BeforePageDisplay": "main",
+		"LogEventsListLineEnding": "main"
 	},
 	"HookHandlers": {
 		"main": {
 			"class": "ThanksMeToo\\ThanksHooks",
-			"services": ["UserFactory"]
+			"services": ["UserFactory", "UserOptionsManager", "MainConfig", "GenderCache"]
+		}
+	},
+	"QUnitTestModule": {
+		"tests.ext.thanks.mobilediff": {
+			"localBasePath": "",
+			"remoteExtPath": "Thanks",
+			"scripts": ["tests/qunit/test_ext.thanks.mobilediff.js"],
+			"dependencies": ["ext.thanks.mobilediff"]
 		}
 	},
 	"config": {
@@ -192,6 +183,6 @@
 			]
 		}
 	},
-	"callback": "ThanksMeToo\\ThanksHooks::onRegistration",
+	"callback": "ThanksMeToo\\ThanksMeTooCallback::onRegistration",
 	"manifest_version": 2
 }
