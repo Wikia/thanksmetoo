@@ -277,7 +277,7 @@ class ApiCoreThank extends ApiBase {
 			[],
 			[
 				'logging' => [ 'INNER JOIN', 'ls_log_id=log_id' ],
-				'actor' => [ 'JOIN', 'actor_id=log_actor']
+				'actor' => [ 'JOIN', 'actor_id=log_actor' ]
 			]
 		);
 	}

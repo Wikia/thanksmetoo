@@ -20,7 +20,7 @@ class SpecialThanks extends FormSpecialPage {
 	 */
 	protected $result;
 
-	/** 'rev' for revision, 'log' for log entry, null if no ID is specified */
+	// 'rev' for revision, 'log' for log entry, null if no ID is specified
 	protected ?string $type;
 
 	/**
