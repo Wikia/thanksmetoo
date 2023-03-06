@@ -8,7 +8,8 @@ use DerivativeRequest;
 use FormSpecialPage;
 use HTMLForm;
 use Linker;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Session\CsrfTokenSet;
+use MediaWiki\User\UserFactory;
 use Status;
 
 class SpecialThanks extends FormSpecialPage {
@@ -19,12 +20,8 @@ class SpecialThanks extends FormSpecialPage {
 	 */
 	protected $result;
 
-	/**
-	 * 'rev' for revision, 'log' for log entry, null if no ID is specified
-	 *
-	 * @var string
-	 */
-	protected $type;
+	/** 'rev' for revision, 'log' for log entry, null if no ID is specified */
+	protected ?string $type;
 
 	/**
 	 * Revision or Log ID ('0' = invalid)
@@ -33,18 +30,18 @@ class SpecialThanks extends FormSpecialPage {
 	 */
 	protected $id;
 
-	public function __construct() {
+	public function __construct( private UserFactory $userFactory ) {
 		parent::__construct( 'Thanks' );
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
 
 	/**
 	 * Set the type and ID or UUID of the request.
-	 *
-	 * @param string $par The subpage name.
+	 * @inheritDoc
 	 */
 	protected function setParameter( $par ) {
 		if ( $par === null || $par === '' ) {
@@ -56,26 +53,17 @@ class SpecialThanks extends FormSpecialPage {
 		if ( strtolower( $tokens[0] ) === 'log' ) {
 			$this->type = 'log';
 			// Make sure there's a numeric ID specified as the subpage.
-			if ( count( $tokens ) === 1 || $tokens[1] === '' || !( ctype_digit( $tokens[1] ) ) ) {
-				$this->id = '0';
-			} else {
-				$this->id = $tokens[1];
-			}
-		} else {
-			$this->type = 'rev';
-			if ( !( ctype_digit( $par ) ) ) { // Revision ID is not an integer.
-				$this->id = '0';
-			} else {
-				$this->id = $par;
-			}
+			$this->id = count( $tokens ) === 1 || $tokens[1] === '' || !ctype_digit( $tokens[1] ) ?
+				'0' :
+				$tokens[1];
+			return;
 		}
+
+		$this->type = 'rev';
+		$this->id = !ctype_digit( $par ) ? '0' : $par;
 	}
 
-	/**
-	 * HTMLForm fields
-	 *
-	 * @return string[][]
-	 */
+	/** @inheritDoc */
 	protected function getFormFields() {
 		return [
 			'id' => [
@@ -93,12 +81,8 @@ class SpecialThanks extends FormSpecialPage {
 		];
 	}
 
-	/**
-	 * Return the confirmation or error message.
-	 *
-	 * @return string
-	 */
-	protected function preText() {
+	/** @inheritDoc */
+	protected function preHtml() {
 		if ( $this->type === null ) {
 			$msgKey = 'thanks-error-no-id-specified';
 		} elseif ( $this->type === 'rev' && $this->id === '0' ) {
@@ -111,14 +95,10 @@ class SpecialThanks extends FormSpecialPage {
 		return '<p>' . $this->msg( $msgKey )->escaped() . '</p>';
 	}
 
-	/**
-	 * Format the submission form.
-	 *
-	 * @param HTMLForm $form The form object to modify.
-	 */
+	/** @inheritDoc */
 	protected function alterForm( HTMLForm $form ) {
-		if ( $this->type === null
-			|| ( in_array( $this->type, [ 'rev', 'log', ] ) && $this->id === '0' )
+		if ( $this->type === null ||
+			( in_array( $this->type, [ 'rev', 'log' ] ) && $this->id === '0' )
 		) {
 			$form->suppressDefaultSubmit();
 		} else {
@@ -126,19 +106,12 @@ class SpecialThanks extends FormSpecialPage {
 		}
 	}
 
-	/**
-	 * @return string
-	 */
+	/** @inheritDoc */
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}
 
-	/**
-	 * Call the API internally.
-	 *
-	 * @param string[] $data The form data.
-	 * @return Status
-	 */
+	/** @inheritDoc */
 	public function onSubmit( array $data ) {
 		if ( !isset( $data['id'] ) ) {
 			return Status::newFatal( 'thanks-error-invalidrevision' );
@@ -148,19 +121,12 @@ class SpecialThanks extends FormSpecialPage {
 			'action' => 'thank',
 			$this->type => (int)$data['id'],
 			'source' => 'specialpage',
-			'token' => $this->getUser()->getEditToken(),
+			'token' => ( new CsrfTokenSet( $this->getRequest() ) )->getToken(),
 		];
 
-		$request = new DerivativeRequest(
-			$this->getRequest(),
-			$requestData,
-			true // posted
-		);
+		$request = new DerivativeRequest( $this->getRequest(), $requestData, true );
 
-		$api = new ApiMain(
-			$request,
-			true // enable write mode
-		);
+		$api = new ApiMain( $request, true );
 
 		try {
 			$api->execute();
@@ -172,24 +138,19 @@ class SpecialThanks extends FormSpecialPage {
 		return Status::newGood();
 	}
 
-	/**
-	 * Display a message to the user.
-	 */
+	/** @inheritDoc */
 	public function onSuccess() {
 		$sender = $this->getUser();
-		$recipient = MediaWikiServices::getInstance()
-			->getUserFactory()
-			->newFromName( $this->result['recipient'] );
+		$recipient = $this->userFactory->newFromName( $this->result['recipient'] );
 		$link = Linker::userLink( $recipient->getId(), $recipient->getName() );
 
-		$msgKey = 'thanks-thanked-notice';
-
-		$msg = $this->msg( $msgKey )
+		$msg = $this->msg( 'thanks-thanked-notice' )
 			->rawParams( $link )
 			->params( $recipient->getName(), $sender->getName() );
 		$this->getOutput()->addHTML( $msg->parse() );
 	}
 
+	/** @inheritDoc */
 	public function isListed() {
 		return false;
 	}

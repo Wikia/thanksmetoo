@@ -25,7 +25,10 @@
 		}
 	},
 	"SpecialPages": {
-		"Thanks": "ThanksMeToo\\SpecialThanks"
+		"Thanks": {
+			"class": "ThanksMeToo\\SpecialThanks",
+			"services": ["UserFactory"]
+		}
 	},
 	"LogTypes": [
 		"thanks"
